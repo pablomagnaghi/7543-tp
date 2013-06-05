@@ -1,0 +1,42 @@
+\documentclass[a4paper,10pt, fleqn]{article}
+\usepackage{graphicx} %Paquete para ingresar gráficos.
+\usepackage{hyperref}
+\usepackage{fancybox}
+\usepackage[utf8]{inputenc}
+\usepackage{placeins}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{multirow}
+
+
+\input{EncabezadoYPie/EncabezadoyPie.tex}
+\title{ \input{Portada/Portada.tex} }
+
+\begin{document}
+\maketitle 
+
+\tableofcontents 
+\newpage
+
+\input{DeterminacionSubredes.tex}
+\newpage
+\input{TablasRuteo.tex}
+\newpage
+\input{RedesParticulares.tex}
+\newpage
+\input{DNS.tex}
+\newpage
+\input{Servicios.tex}
+\newpage
+\input{VPN.tex}
+
+\newpage
+\begin{thebibliography}{99}
+	\bibitem{RFC} ``Internet Standard Subnetting Procedure'' RFC 950, 1985.  Mogul, J., Postel, J..
+	\bibitem{RFC} ``Virtual Router Redundancy Protocol'' RFC 3768.  R. Hinden.
+	\bibitem{WWW} ``DNS for Rocket Scientists''  \url{http://www.zytrax.com/books/dns}
+	\bibitem{WWW} ``Linux Man page''
+\end{thebibliography}
+\end{document}
+
+

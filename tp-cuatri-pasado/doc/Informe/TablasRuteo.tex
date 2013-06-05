@@ -1,0 +1,838 @@
+\section{Ruteo}
+En esta sección se muestran los diferentes tipos de ruteos aplicados a cada parte de la red. En el caso de 
+ruteo estático, se muestran las tablas de ruteo de los routers en cuestión. En el caso de ruteo dinámico, 
+se da una breve explicación del funcionamiento del protocolo de ruteo utilizado y los comandos necesarios
+para configurar al mismo.
+
+\subsection{Ruteo Estático - Rutas Principales}
+Para establecer las tablas de ruteo se optó por diseñar un cámino mínimo aproximado, eligiendo 
+de forma arbitraria la ruta en caso de empate. A continuación se muestran los resultados obtenidos 
+para cada router, omitiendo a aquellos routers en los cuales se aplica únicamente ruteo dinámico (son los 
+routers correspondientes a la sede Mercedes, R3, R4, R5 y R6). Los routers R1, R2
+y R7 poseen interfaces que se comunican tanto con la sede Mercedes como con la sede Zárate, de forma que la
+tabla de ruteo de los mismos poseerán entradas estáticas como dinámicas. Sin embargo, en esta subsección sólo 
+se muestran las entradas estáticas.
+
+\subsubsection{R1}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+	Red & Dirección de red & Mascara & Next Hop\\ \hline
+	C & 10.61.5.0 & 255.255.255.0 & 10.7.5.74   \\ \hline
+	D & 10.111.25.128 & 255.255.255.224 & 10.7.5.74 \\ \hline
+	E & 10.61.6.128 & 255.255.255.224 & 10.7.5.74 \\ \hline
+	F & 10.111.25.160 & 255.255.255.240 & 10.7.5.66 \\ \hline
+	G & 10.111.25.0 & 255.255.255.128 & 10.7.5.66 \\ \hline
+	H & 10.61.7.128 & 255.255.255.128 & 10.7.5.66 \\ \hline
+	J & 10.61.6.160 & 255.255.255.240 & 10.7.5.74 \\ \hline
+	M & 10.61.6.176 & 255.255.255.252 & 10.7.5.66 \\ \hline
+	N & 10.61.6.180 & 255.255.255.252 & 10.7.5.74 \\ \hline
+	R & 10.7.5.76 & 255.255.255.252 & 10.7.5.66 \\ \hline
+	S & 10.7.5.80 & 255.255.255.252 & 10.7.5.74 \\ \hline
+	T & 10.7.5.84 & 255.255.255.252 & 10.7.5.74 \\ \hline
+	V & 10.61.6.184 & 255.255.255.252 & 10.7.5.66 \\
+    \hline
+  \end{tabular}
+  \captionof{table}{Tabla de ruteo R1}
+\end{table}
+
+\newpage
+\subsubsection{R2}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+	Red & Dirección de red & Mascara & Next Hop\\ \hline
+	C & 10.61.5.0 & 255.255.255.0 & 10.61.6.178 \\ \hline
+	D & 10.111.25.128 & 255.255.255.224 & 10.61.6.178 \\ \hline
+	E & 10.61.6.128 & 255.255.255.224 & 10.61.6.178 \\ \hline
+	F & 10.111.25.160 & 255.255.255.240 & 10.61.6.178 \\ \hline
+	G & 10.111.25.0 & 255.255.255.128 & 10.61.6.178 \\ \hline
+	H & 10.61.7.128 & 255.255.255.128 & 10.61.6.178 \\ \hline
+	J & 10.61.6.160 & 255.255.255.240 & 10.61.6.178 \\ \hline
+	M & 10.61.6.176 & 255.255.255.252 & 10.61.6.178 \\ \hline
+	N & 10.61.6.180 & 255.255.255.252 & 10.61.6.178 \\ \hline
+	O & 10.7.5.64 & 255.255.255.252 & 10.61.6.178 \\ \hline
+	P & 10.7.5.68 & 255.255.255.252 & 10.61.6.178 \\ \hline
+	Q & 10.7.5.72 & 255.255.255.252 & 10.61.6.178 \\ \hline
+	R & 10.7.5.76 & 255.255.255.252 & 10.61.6.178 \\ \hline
+	S & 10.7.5.80 & 255.255.255.252 & 10.61.6.178 \\ \hline
+	T & 10.7.5.84 & 255.255.255.252 & 10.61.6.178 \\ \hline
+	V & 10.61.6.184 & 255.255.255.252 & 10.61.6.178 \\
+    \hline
+  \end{tabular}
+  \captionof{table}{Tabla de ruteo R2}
+\end{table}
+
+\newpage
+\subsubsection{R7}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+	Red & Dirección de red & Mascara & Next Hop\\ \hline
+	C & 10.61.5.0 & 255.255.255.0 & Tunel 10: 10.61.6.186 \\ \hline
+	D & 10.111.25.128 & 255.255.255.224 & Tunel 10: 10.61.6.186 \\ \hline
+	E & 10.61.6.128 & 255.255.255.224 & Tunel 10: 10.61.6.186 \\ \hline
+	F & 10.111.25.160 & 255.255.255.240 & Tunel 10: 10.61.6.186 \\ \hline
+	G & 10.111.25.0 & 255.255.255.128 & Tunel 10: 10.61.6.186 \\ \hline
+	H & 10.61.7.128 & 255.255.255.128 & Tunel 10: 10.61.6.186 \\ \hline
+	J & 10.61.6.160 & 255.255.255.240 & Tunel 10: 10.61.6.186 \\ \hline
+	M & 10.61.6.176 & 255.255.255.252 & Tunel 10: 10.61.6.186 \\ \hline
+	N & 10.61.6.180 & 255.255.255.252 & Tunel 10: 10.61.6.186 \\ \hline
+	O & 10.7.5.64 & 255.255.255.252 & Tunel 10: 10.61.6.186 \\ \hline
+	P & 10.7.5.68 & 255.255.255.252 & Tunel 10: 10.61.6.186 \\ \hline
+	Q & 10.7.5.72 & 255.255.255.252 & Tunel 10: 10.61.6.186 \\ \hline
+	R & 10.7.5.76 & 255.255.255.252 & Tunel 10: 10.61.6.186 \\ \hline
+	S & 10.7.5.80 & 255.255.255.252 & Tunel 10: 10.61.6.186 \\ \hline
+	T & 10.7.5.84 & 255.255.255.252 & Tunel 10: 10.61.6.186 \\ \hline
+	V & 10.61.6.184 & 255.255.255.252 & Tunel 10: 10.61.6.186 \\
+    \hline
+  \end{tabular}
+  \captionof{table}{Tabla de ruteo R7}
+\end{table}
+
+\newpage
+\subsubsection{R8}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+	Red & Dirección de red & Mascara & Next Hop\\ \hline
+	A & 192.168.25.0 & 255.255.255.0 & 10.61.6.177 \\ \hline
+	B & 10.111.25.192 & 255.255.255.192 & 10.61.6.177 \\ \hline
+	C & 10.61.5.0 & 255.255.255.0 & 10.7.5.82 \\ \hline
+	D & 10.111.25.128 & 255.255.255.224 & 10.7.5.82 \\ \hline
+	E & 10.61.6.128 & 255.255.255.224 & 10.7.5.82 \\ \hline
+	F & 10.111.25.160 & 255.255.255.240 & 10.61.7.131 \\ \hline
+	G & 10.111.25.0 & 255.255.255.128 & 10.61.7.132 \\ \hline
+	I & 10.111.25.176 & 255.255.255.240 & 10.61.6.177 \\ \hline
+	J & 10.61.6.160 & 255.255.255.240 & 10.7.5.82 \\ \hline
+	L & 10.61.6.192 & 255.255.255.224 & 10.61.6.177 \\ \hline
+	N & 10.61.6.180 & 255.255.255.252 & 10.7.5.82 \\ \hline
+	P & 10.7.5.68 & 255.255.255.252 & 10.7.5.65 \\ \hline
+	Q & 10.7.5.72 & 255.255.255.252 & 10.7.5.65 \\ \hline
+	T & 10.7.5.84 & 255.255.255.252 & 10.7.5.82 \\ \hline
+	V & 10.61.6.184 & 255.255.255.252 & 10.61.7.132 \\
+    \hline
+  \end{tabular}
+  \captionof{table}{Tabla de ruteo R8}
+\end{table}
+
+\newpage
+\subsubsection{R9}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+	Red & Dirección de red & Mascara & Next Hop\\ \hline
+	A & 192.168.25.0 & 255.255.255.0 & 10.7.5.65 \\ \hline
+	B & 10.111.25.192 & 255.255.255.192 & 10.7.5.65 \\ \hline
+	C & 10.61.5.0 & 255.255.255.0 & 10.7.5.86 \\ \hline
+	D & 10.111.25.128 & 255.255.255.224 & 10.7.5.86 \\ \hline
+	E & 10.61.6.128 & 255.255.255.224 & 10.7.5.86 \\ \hline
+	F & 10.111.25.160 & 255.255.255.240 & 10.61.7.131 \\ \hline
+	G & 10.111.25.0 & 255.255.255.128 & 10.61.7.132 \\ \hline
+	I & 10.111.25.176 & 255.255.255.240 & 10.7.5.65 \\ \hline
+	J & 10.61.6.160 & 255.255.255.240 & 10.7.5.86 \\ \hline
+	L & 10.61.6.192 & 255.255.255.224 & 10.7.5.65 \\ \hline
+	M & 10.61.6.176 & 255.255.255.252 & 10.7.5.77 \\ \hline
+	N & 10.61.6.180 & 255.255.255.252 & 10.7.5.86 \\ \hline
+	O & 10.7.5.64 & 255.255.255.252 & 10.7.5.77 \\ \hline
+	P & 10.7.5.68 & 255.255.255.252 & 10.61.7.130 \\ \hline
+	Q & 10.7.5.72 & 255.255.255.252 & 10.7.5.86 \\ \hline
+	S & 10.7.5.80 & 255.255.255.252 & 10.7.5.77 \\ \hline
+	V & 10.61.6.184 & 255.255.255.252 & 10.61.7.132 \\
+    \hline
+  \end{tabular}
+  \captionof{table}{Tabla de ruteo R9}
+\end{table}
+
+\newpage
+\subsubsection{R10}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+	Red & Dirección de red & Mascara & Next Hop\\ \hline
+	A & 192.168.25.0 & 255.255.255.0 & 10.61.7.129 \\ \hline
+	B & 10.111.25.192 & 255.255.255.192 & 10.111.25.164 \\ \hline
+	C & 10.61.5.0 & 255.255.255.0 & 10.61.7.130 \\ \hline
+	D & 10.111.25.128 & 255.255.255.224 & 10.61.7.130 \\ \hline
+	E & 10.61.6.128 & 255.255.255.224 & 10.61.7.130 \\ \hline
+	G & 10.111.25.0 & 255.255.255.128 & 10.61.7.132 \\ \hline
+	I & 10.111.25.176 & 255.255.255.240 & 10.61.7.129 \\ \hline
+	J & 10.61.6.160 & 255.255.255.240 & 10.61.7.130 \\ \hline
+	L & 10.61.6.192 & 255.255.255.224 & 10.61.7.129 \\ \hline
+	M & 10.61.6.176 & 255.255.255.252 & 10.61.7.129 \\ \hline
+	N & 10.61.6.180 & 255.255.255.252 & 10.111.25.162 \\ \hline
+	O & 10.7.5.64 & 255.255.255.252 & 10.61.7.129 \\ \hline
+	P & 10.7.5.68 & 255.255.255.252 & 10.61.7.130 \\ \hline
+	Q & 10.7.5.72 & 255.255.255.252 & 10.61.7.130 \\ \hline
+	R & 10.7.5.76 & 255.255.255.252 & 10.61.7.130 \\ \hline
+	S & 10.7.5.80 & 255.255.255.252 & 10.61.7.129 \\ \hline
+	T & 10.7.5.84 & 255.255.255.252 & 10.61.7.130 \\ \hline
+	V & 10.61.6.184 & 255.255.255.252 & 10.111.25.164 \\
+    \hline
+  \end{tabular}
+  \captionof{table}{Tabla de ruteo R10}
+\end{table}
+
+\newpage
+\subsubsection{R11}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+	Red & Dirección de red & Mascara & Next Hop\\ \hline
+	A & 192.168.25.0 & 255.255.255.0 & 10.111.25.161 \\ \hline
+	B & 10.111.25.192 & 255.255.255.192 & 10.111.25.164 \\ \hline
+	C & 10.61.5.0 & 255.255.255.0 & 10.61.6.182 \\ \hline
+	D & 10.111.25.128 & 255.255.255.224 & 10.61.6.182 \\ \hline
+	E & 10.61.6.128 & 255.255.255.224 & 10.61.6.182 \\ \hline
+	G & 10.111.25.0 & 255.255.255.128 & 10.111.25.163 \\ \hline
+	H & 10.61.7.128 & 255.255.255.128 & 10.111.25.161 \\ \hline
+	I & 10.111.25.176 & 255.255.255.240 & 10.111.25.161 \\ \hline
+	J & 10.61.6.160 & 255.255.255.240 & 10.61.6.182 \\ \hline
+	L & 10.61.6.192 & 255.255.255.224 & 10.111.25.161 \\ \hline
+	M & 10.61.6.176 & 255.255.255.252 & 10.111.25.163 \\ \hline
+	O & 10.7.5.64 & 255.255.255.252 & 10.111.25.163 \\ \hline
+	P & 10.7.5.68 & 255.255.255.252 & 10.111.25.163 \\ \hline
+	Q & 10.7.5.72 & 255.255.255.252 & 10.61.6.182 \\ \hline
+	R & 10.7.5.76 & 255.255.255.252 & 10.111.25.163 \\ \hline
+	S & 10.7.5.80 & 255.255.255.252 & 10.61.6.182 \\ \hline
+	T & 10.7.5.84 & 255.255.255.252 & 10.61.6.182 \\ \hline
+	V & 10.61.6.184 & 255.255.255.252 & 10.111.25.164 \\
+    \hline
+  \end{tabular}
+  \captionof{table}{Tabla de ruteo R11}
+\end{table}
+
+\newpage
+\subsubsection{R12}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+	Red & Dirección de red & Mascara & Next Hop\\ \hline
+	A & 192.168.25.0 & 255.255.255.0 & 10.61.7.129 \\ \hline
+	B & 10.111.25.192 & 255.255.255.192 & 10.111.25.164 \\ \hline
+	C & 10.61.5.0 & 255.255.255.0 & 10.111.25.162 \\ \hline
+	D & 10.111.25.128 & 255.255.255.224 & 10.111.25.162 \\ \hline
+	E & 10.61.6.128 & 255.255.255.224 & 10.111.25.162 \\ \hline
+	I & 10.111.25.176 & 255.255.255.240 & 10.61.7.129 \\ \hline
+	J & 10.61.6.160 & 255.255.255.240 & 10.111.25.162 \\ \hline
+	L & 10.61.6.192 & 255.255.255.224 & 10.111.25.164 \\ \hline
+	M & 10.61.6.176 & 255.255.255.252 & 10.61.7.129 \\ \hline
+	N & 10.61.6.180 & 255.255.255.252 & 10.111.25.162 \\ \hline
+	O & 10.7.5.64 & 255.255.255.252 & 10.61.7.129 \\ \hline
+	P & 10.7.5.68 & 255.255.255.252 & 10.61.7.130 \\ \hline
+	Q & 10.7.5.72 & 255.255.255.252 & 10.61.7.129 \\ \hline
+	R & 10.7.5.76 & 255.255.255.252 & 10.61.7.129 \\ \hline
+	S & 10.7.5.80 & 255.255.255.252 & 10.61.7.129 \\ \hline
+	T & 10.7.5.84 & 255.255.255.252 & 10.61.7.130 \\ \hline
+	V & 10.61.6.184 & 255.255.255.252 & 10.111.25.164 \\
+    \hline
+  \end{tabular}
+  \captionof{table}{Tabla de ruteo R12}
+\end{table}
+
+\newpage
+\subsubsection{R13}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+	Red & Dirección de red & Mascara & Next Hop\\ \hline
+	A & 192.168.25.0 & 255.255.255.0 & 10.111.25.161 \\ \hline
+	B & 10.111.25.192 & 255.255.255.192 & Tunnel 20:10.61.6.185 \\ \hline
+	C & 10.61.5.0 & 255.255.255.0 & 10.111.25.162 \\ \hline
+	D & 10.111.25.128 & 255.255.255.224 & 10.111.25.162 \\ \hline
+	E & 10.61.6.128 & 255.255.255.224 & 10.111.25.162 \\ \hline
+	F & 10.111.25.160 & 255.255.255.240 & 10.111.25.163 \\ \hline
+	G & 10.111.25.0 & 255.255.255.128 & 10.111.25.163 \\ \hline
+	H & 10.61.7.128 & 255.255.255.128 & 10.111.25.161 \\ \hline
+	I & 10.111.25.176 & 255.255.255.240 & Tunel 20: 10.61.6.185 \\ \hline
+	J & 10.61.6.160 & 255.255.255.240 & 10.111.25.162 \\ \hline
+	L & 10.61.6.192 & 255.255.255.224 & Tunel 20: 10.61.6.185 \\ \hline
+	M & 10.61.6.176 & 255.255.255.252 & 10.111.25.161 \\ \hline
+	N & 10.61.6.180 & 255.255.255.252 & 10.111.25.162 \\ \hline
+	O & 10.7.5.64 & 255.255.255.252 & 10.111.25.163 \\ \hline
+	P & 10.7.5.68 & 255.255.255.252 & 10.111.25.163 \\ \hline
+	Q & 10.7.5.72 & 255.255.255.252 & 10.111.25.162 \\ \hline
+	R & 10.7.5.76 & 255.255.255.252 & 10.111.25.161 \\ \hline
+	S & 10.7.5.80 & 255.255.255.252 & 10.111.25.161 \\ \hline
+	T & 10.7.5.84 & 255.255.255.252 & 10.111.25.161 \\ \hline
+    \hline
+  \end{tabular}
+  \captionof{table}{Tabla de ruteo R13}
+\end{table}
+
+\newpage
+\subsubsection{R14}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+	Red & Dirección de red & Mascara & Next Hop\\ \hline
+	A & 192.168.25.0 & 255.255.255.0 & 10.61.6.131 \\ \hline
+	B & 10.111.25.192 & 255.255.255.192 & 10.61.6.181 \\ \hline
+	C & 10.61.5.0 & 255.255.255.0 & 10.61.6.132 \\ \hline
+	D & 10.111.25.128 & 255.255.255.224 & 10.61.6.132 \\ \hline
+	F & 10.111.25.160 & 255.255.255.240 & 10.61.6.181 \\ \hline
+	G & 10.111.25.0 & 255.255.255.128 & 10.61.6.181 \\ \hline
+	H & 10.61.7.128 & 255.255.255.128 & 10.61.6.181 \\ \hline
+	I & 10.111.25.176 & 255.255.255.240 & 10.61.6.131 \\ \hline
+	J & 10.61.6.160 & 255.255.255.240 & 10.61.6.132 \\ \hline
+	L & 10.61.6.192 & 255.255.255.224 & 10.61.6.131 \\ \hline
+	M & 10.61.6.176 & 255.255.255.252 & 10.61.6.131 \\ \hline
+	O & 10.7.5.64 & 255.255.255.252 & 10.61.6.131 \\ \hline
+	P & 10.7.5.68 & 255.255.255.252 & 10.61.6.131 \\ \hline
+	Q & 10.7.5.72 & 255.255.255.252 & 10.61.6.131 \\ \hline
+	R & 10.7.5.76 & 255.255.255.252 & 10.61.6.131 \\ \hline
+	S & 10.7.5.80 & 255.255.255.252 & 10.61.6.131 \\ \hline
+	T & 10.7.5.84 & 255.255.255.252 & 10.61.6.131 \\ \hline
+	V & 10.61.6.184 & 255.255.255.252 & 10.61.6.181 \\
+    \hline
+  \end{tabular}
+  \captionof{table}{Tabla de ruteo R14}
+\end{table}
+
+\newpage
+\subsubsection{R15}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+	Red & Dirección de red & Mascara & Next Hop\\ \hline
+	A & 192.168.25.0 & 255.255.255.0 & 10.7.5.73 \\ \hline
+	B & 10.111.25.192 & 255.255.255.192 & 10.7.5.73 \\ \hline
+	C & 10.61.5.0 & 255.255.255.0 & 10.61.6.132 \\ \hline
+	D & 10.111.25.128 & 255.255.255.224 & 10.61.6.132 \\ \hline
+	F & 10.111.25.160 & 255.255.255.240 & 10.7.5.85 \\ \hline
+	G & 10.111.25.0 & 255.255.255.128 & 10.7.5.81 \\ \hline
+	H & 10.61.7.128 & 255.255.255.128 & 10.7.5.81 \\ \hline
+	I & 10.111.25.176 & 255.255.255.240 & 10.7.5.73 \\ \hline
+	J & 10.61.6.160 & 255.255.255.240 & 10.61.6.132 \\ \hline
+	L & 10.61.6.192 & 255.255.255.224 & 10.7.5.73 \\ \hline
+	M & 10.61.6.176 & 255.255.255.252 & 10.7.5.81 \\ \hline
+	N & 10.61.6.180 & 255.255.255.252 & 10.61.6.130 \\ \hline
+	O & 10.7.5.64 & 255.255.255.252 & 10.7.5.73 \\ \hline
+	P & 10.7.5.68 & 255.255.255.252 & 10.7.5.85 \\ \hline
+	R & 10.7.5.76 & 255.255.255.252 & 10.7.5.81 \\ \hline
+	V & 10.61.6.184 & 255.255.255.252 & 10.61.6.130 \\
+    \hline
+  \end{tabular}
+  \captionof{table}{Tabla de ruteo R15}
+\end{table}
+
+\newpage
+\subsubsection{R16}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+	Red & Dirección de red & Mascara & Next Hop\\ \hline
+	A & 192.168.25.0 & 255.255.255.0 & 10.61.6.131 \\ \hline
+	B & 10.111.25.192 & 255.255.255.192 & 10.61.6.130 \\ \hline
+	D & 10.111.25.128 & 255.255.255.224 & 10.61.5.2 \\ \hline
+	F & 10.111.25.160 & 255.255.255.240 & 10.61.6.130 \\ \hline
+	G & 10.111.25.0 & 255.255.255.128 & 10.61.6.130 \\ \hline
+	H & 10.61.7.128 & 255.255.255.128 & 10.61.6.131 \\ \hline	
+	I & 10.111.25.176 & 255.255.255.240 & 10.61.6.131 \\ \hline
+	J & 10.61.6.160 & 255.255.255.240 & 10.61.5.2 \\ \hline
+	L & 10.61.6.192 & 255.255.255.224 & 10.61.6.131 \\ \hline
+	M & 10.61.6.176 & 255.255.255.252 & 10.61.6.131 \\ \hline
+	N & 10.61.6.180 & 255.255.255.252 & 10.61.6.130 \\ \hline
+	O & 10.7.5.64 & 255.255.255.252 & 10.61.6.131 \\ \hline
+	P & 10.7.5.68 & 255.255.255.252 & 10.61.6.131 \\ \hline
+	Q & 10.7.5.72 & 255.255.255.252 & 10.61.6.131 \\ \hline
+	R & 10.7.5.76 & 255.255.255.252 & 10.61.6.131 \\ \hline
+	S & 10.7.5.80 & 255.255.255.252 & 10.61.6.131 \\ \hline
+	T & 10.7.5.84 & 255.255.255.252 & 10.61.6.131 \\ \hline
+	V & 10.61.6.184 & 255.255.255.252 & 10.61.6.130 \\
+    \hline
+  \end{tabular}
+  \captionof{table}{Tabla de ruteo R16}
+\end{table}
+
+\newpage
+\subsubsection{R17}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+	Red & Dirección de red & Mascara & Next Hop\\ \hline
+	A & 192.168.25.0 & 255.255.255.0 & 10.61.5.1 \\ \hline
+	B & 10.111.25.192 & 255.255.255.192 & 10.61.5.1 \\ \hline
+	F & 10.111.25.160 & 255.255.255.240 & 10.61.5.1 \\ \hline
+	G & 10.111.25.0 & 255.255.255.128 & 10.61.5.1 \\ \hline
+	H & 10.61.7.128 & 255.255.255.128 & 10.61.5.1 \\ \hline
+	I & 10.111.25.176 & 255.255.255.240 & 10.61.5.1 \\ \hline
+	J & 10.61.6.160 & 255.255.255.240 & 10.111.25.130 \\ \hline
+	L & 10.61.6.192 & 255.255.255.224 & 10.61.5.1 \\ \hline
+	M & 10.61.6.176 & 255.255.255.252 & 10.61.5.1 \\ \hline
+	N & 10.61.6.180 & 255.255.255.252 & 10.61.5.1 \\ \hline
+	O & 10.7.5.64 & 255.255.255.252 & 10.61.5.1 \\ \hline
+	P & 10.7.5.68 & 255.255.255.252 & 10.61.5.1 \\ \hline
+	Q & 10.7.5.72 & 255.255.255.252 & 10.61.5.1 \\ \hline
+	R & 10.7.5.76 & 255.255.255.252 & 10.61.5.1 \\ \hline
+	S & 10.7.5.80 & 255.255.255.252 & 10.61.5.1 \\ \hline
+	T & 10.7.5.84 & 255.255.255.252 & 10.61.5.1 \\ \hline
+	V & 10.61.6.184 & 255.255.255.252 & 10.61.5.1 \\
+    \hline
+  \end{tabular}
+  \captionof{table}{Tabla de ruteo R17}
+\end{table}
+
+\newpage
+\subsubsection{R18}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+	Red & Dirección de red & Mascara & Next Hop\\ \hline
+	A & 192.168.25.0 & 255.255.255.0 & 10.111.25.129 \\ \hline
+	B & 10.111.25.192 & 255.255.255.192 & 10.111.25.129 \\ \hline
+	C & 10.61.5.0 & 255.255.255.0 & 10.111.25.129 \\ \hline
+	E & 10.61.6.128 & 255.255.255.224 & 10.111.25.129 \\ \hline
+	F & 10.111.25.160 & 255.255.255.240 & 10.111.25.129 \\ \hline
+	G & 10.111.25.0 & 255.255.255.128 & 10.111.25.129 \\ \hline
+	H & 10.61.7.128 & 255.255.255.128 & 10.111.25.129 \\ \hline
+	I & 10.111.25.176 & 255.255.255.240 & 10.111.25.129 \\ \hline
+	L & 10.61.6.192 & 255.255.255.224 & 10.111.25.129 \\ \hline
+	M & 10.61.6.176 & 255.255.255.252 & 10.111.25.129 \\ \hline
+	N & 10.61.6.180 & 255.255.255.252 & 10.111.25.129 \\ \hline
+	O & 10.7.5.64 & 255.255.255.252 & 10.111.25.129 \\ \hline
+	P & 10.7.5.68 & 255.255.255.252 & 10.111.25.129 \\ \hline
+	Q & 10.7.5.72 & 255.255.255.252 & 10.111.25.129 \\ \hline
+	R & 10.7.5.76 & 255.255.255.252 & 10.111.25.129 \\ \hline
+	S & 10.7.5.80 & 255.255.255.252 & 10.111.25.129 \\ \hline
+	T & 10.7.5.84 & 255.255.255.252 & 10.111.25.129 \\ \hline
+	V & 10.61.6.184 & 255.255.255.252 & 10.111.25.129 \\
+    \hline
+  \end{tabular}
+  \captionof{table}{Tabla de ruteo R18}
+\end{table}
+
+\newpage
+
+\subsection{Ruteo Estático - Rutas contingencia}
+Para el ruteo de contingencia se han definido las rutas alternativas arbitrariamente, siempre que las
+mismas no originaran bucles. En estos casos, no se han especificado rutas de contingencia, ya que se ha priorizado
+la estabilidad de la red. \\
+\indent A continuación se detallan todas las rutas de contingencia que se han podido definir, asignándoles a las mismas
+un coste administrativo mayor que a las principales (arbitrariamente el valor de cinco), por lo que la topología se 
+iniciará ignorando este ruteo. El mismo solo es utilizado en caso en que se modifique manualmente la tabla de ruteo del router, 
+eliminando la ruta primaria o en el caso de los PPP, ante la detección de la caída de la interfaz utilizada.
+
+
+\subsubsection{R1}
+
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+Red & Dirección de red & Mascara & Next Hop\\ \hline
+A & 192.168.25.0 & 255.255.255.0 & -\\ \hline
+B & 10.111.25.192 & 255.255.255.192 & -\\ \hline
+C & 10.61.5.0 & 255.255.255.0 & 10.7.5.70 \\ \hline
+D & 10.111.25.128 & 255.255.255.224 & 10.7.5.70 \\ \hline
+E & 10.61.6.128 & 255.255.255.224 & 10.7.5.70 \\ \hline
+F & 10.111.25.160 & 255.255.255.240 & 10.7.5.74 \\ \hline
+G & 10.111.25.0 & 255.255.255.128 & 110.7.5.74 \\ \hline
+H & 10.61.7.128 & 255.255.255.128 & 110.7.5.70 \\ \hline
+I & 10.111.25.176 & 255.255.255.240 & 10.7.5.70	 \\ \hline
+J & 10.61.6.160 & 255.255.255.240 & -\\ \hline
+L & 10.61.6.192 & 255.255.255.224 & -\\ \hline
+M & 10.61.6.176 & 255.255.255.252 &10.7.5.66 \\ \hline
+N & 10.61.6.180 & 255.255.255.252 &10.7.5.66 \\ \hline
+O & 10.7.5.64 & 255.255.255.252 & -\\ \hline
+P & 10.7.5.68 & 255.255.255.252 & -\\ \hline
+Q & 10.7.5.72 & 255.255.255.252 & -\\ \hline
+R & 10.7.5.76 & 255.255.255.252 & 10.7.5.70 \\ \hline
+S & 10.7.5.80 & 255.255.255.252 & 10.7.5.66 \\ \hline
+T & 10.7.5.84 & 255.255.255.252 & 10.7.5.70 \\ \hline
+V & 10.61.6.184 & 255.255.255.252 & 10.7.5.74 \\
+  \hline
+ \end{tabular}
+ \captionof{table}{Tabla de ruteo R1}
+\end{table}
+
+\newpage
+\subsubsection{R8}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+Red & Dirección de red & Mascara & Next Hop\\ \hline
+A & 192.168.25.0 & 255.255.255.0 & 10.7.5.65 \\ \hline
+B & 10.111.25.192 & 255.255.255.192 & 10.7.5.65 \\ \hline
+C & 10.61.5.0 & 255.255.255.0 & 10.61.7.132 \\ \hline
+D & 10.111.25.128 & 255.255.255.224 & 10.61.7.132 \\ \hline
+E & 10.61.6.128 & 255.255.255.224 & 10.61.7.130 \\ \hline
+F & 10.111.25.160 & 255.255.255.240 & 10.61.7.132 \\ \hline
+G & 10.111.25.0 & 255.255.255.128 & 10.61.7.131 \\ \hline
+H & 10.61.7.128 & 255.255.255.128 & -\\ \hline
+I & 10.111.25.176 & 255.255.255.240 & 10.7.5.65 \\ \hline
+J & 10.61.6.160 & 255.255.255.240 & 10.61.7.132 \\ \hline
+L & 10.61.6.192 & 255.255.255.224 & 10.7.5.65 \\ \hline
+M & 10.61.6.176 & 255.255.255.252 & -\\ \hline
+N & 10.61.6.180 & 255.255.255.252 & 10.61.7.132 \\ \hline
+O & 10.7.5.64 & 255.255.255.252 & -\\ \hline
+P & 10.7.5.68 & 255.255.255.252 & 10.61.7.130 \\ \hline
+Q & 10.7.5.72 & 255.255.255.252 & 10.7.5.82 \\ \hline
+R & 10.7.5.76 & 255.255.255.252 & -\\ \hline
+S & 10.7.5.80 & 255.255.255.252 & -\\ \hline
+T & 10.7.5.84 & 255.255.255.252 & 10.61.7.130 \\ \hline
+V & 10.61.6.184 & 255.255.255.252 &10.61.7.131 \\
+  \hline
+ \end{tabular}
+ \captionof{table}{Tabla de ruteo R8}
+\end{table}
+
+\newpage
+\subsubsection{R9}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+Red & Dirección de red & Mascara & Next Hop\\ \hline
+A & 192.168.25.0 & 255.255.255.0 & 10.7.5.77\\ \hline
+B & 10.111.25.192 & 255.255.255.192 & 10.7.5.77 \\ \hline
+C & 10.61.5.0 & 255.255.255.0 & 10.61.7.132	 \\ \hline
+D & 10.111.25.128 & 255.255.255.224 &10.61.7.132 \\ \hline
+E & 10.61.6.128 & 255.255.255.224 &10.61.7.132 \\ \hline
+F & 10.111.25.160 & 255.255.255.240 & 10.61.7.132 \\ \hline
+G & 10.111.25.0 & 255.255.255.128 & -\\ \hline
+H & 10.61.7.128 & 255.255.255.128 & -\\ \hline
+I & 10.111.25.176 & 255.255.255.240 & 10.7.5.77 \\ \hline
+J & 10.61.6.160 & 255.255.255.240 & 10.61.7.132 \\ \hline
+L & 10.61.6.192 & 255.255.255.224 &10.7.5.77 \\ \hline
+M & 10.61.6.176 & 255.255.255.252 & 10.7.5.77 \\ \hline
+N & 10.61.6.180 & 255.255.255.252 & 10.61.7.131 \\ \hline
+O & 10.7.5.64 & 255.255.255.252 & 10.7.5.69 \\ \hline
+P & 10.7.5.68 & 255.255.255.252 & 10.61.7.130 \\ \hline
+Q & 10.7.5.72 & 255.255.255.252 & 10.7.5.69 \\ \hline
+R & 10.7.5.76 & 255.255.255.252 & -\\ \hline
+S & 10.7.5.80 & 255.255.255.252 & 10.7.5.86 \\ \hline
+T & 10.7.5.84 & 255.255.255.252 & -\\ \hline
+V & 10.61.6.184 & 255.255.255.252 & 10.61.7.131 \\
+  \hline
+ \end{tabular}
+ \captionof{table}{Tabla de ruteo R9}
+\end{table}
+
+\newpage
+\subsubsection{R10}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+Red & Dirección de red & Mascara & Next Hop\\ \hline
+A & 192.168.25.0 & 255.255.255.0 &10.61.7.130 \\ \hline
+B & 10.111.25.192 & 255.255.255.192 &10.61.7.129 \\ \hline
+C & 10.61.5.0 & 255.255.255.0 &10.61.7.129 \\ \hline
+D & 10.111.25.128 & 255.255.255.224 &10.61.7.129 \\ \hline
+E & 10.61.6.128 & 255.255.255.224 &10.111.25.162 \\ \hline
+F & 10.111.25.160 & 255.255.255.240 & -\\ \hline
+G & 10.111.25.0 & 255.255.255.128 & -\\ \hline
+H & 10.61.7.128 & 255.255.255.128 &- \\ \hline
+I & 10.111.25.176 & 255.255.255.240 &10.61.7.130 \\ \hline
+J & 10.61.6.160 & 255.255.255.240 & 10.61.7.129 \\ \hline
+L & 10.61.6.192 & 255.255.255.224 & 10.61.7.130 \\ \hline
+M & 10.61.6.176 & 255.255.255.252 & -\\ \hline
+N & 10.61.6.180 & 255.255.255.252 &10.61.7.130 \\ \hline
+O & 10.7.5.64 & 255.255.255.252 &10.61.7.130 \\ \hline
+P & 10.7.5.68 & 255.255.255.252 &10.61.7.129 \\ \hline
+Q & 10.7.5.72 & 255.255.255.252 &10.61.7.129 \\ \hline
+R & 10.7.5.76 & 255.255.255.252 &10.61.7.129 \\ \hline
+S & 10.7.5.80 & 255.255.255.252 &10.61.7.130 \\ \hline
+T & 10.7.5.84 & 255.255.255.252 & 10.61.7.129 \\ \hline
+V & 10.61.6.184 & 255.255.255.252 & -\\
+  \hline
+ \end{tabular}
+ \captionof{table}{Tabla de ruteo R10}
+\end{table}
+
+\newpage
+\subsubsection{R11}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+Red & Dirección de red & Mascara & Next Hop\\ \hline
+A & 192.168.25.0 & 255.255.255.0 & 10.111.25.163 \\ \hline
+B & 10.111.25.192 & 255.255.255.192 & 10.111.25.163 \\ \hline
+C & 10.61.5.0 & 255.255.255.0 & 10.111.25.161 \\ \hline
+D & 10.111.25.128 & 255.255.255.224 & 10.111.25.161 \\ \hline
+E & 10.61.6.128 & 255.255.255.224 & 10.111.25.161 \\ \hline
+F & 10.111.25.160 & 255.255.255.240 & -\\ \hline
+G & 10.111.25.0 & 255.255.255.128 & -\\ \hline
+H & 10.61.7.128 & 255.255.255.128 & 10.111.25.163 \\ \hline
+I & 10.111.25.176 & 255.255.255.240 & 10.111.25.163 \\ \hline
+J & 10.61.6.160 & 255.255.255.240 & 10.111.25.161 \\ \hline
+L & 10.61.6.192 & 255.255.255.224 & 10.111.25.164 \\ \hline
+M & 10.61.6.176 & 255.255.255.252 & 10.111.25.161 \\ \hline
+N & 10.61.6.180 & 255.255.255.252 & -\\ \hline
+O & 10.7.5.64 & 255.255.255.252 & 10.111.25.161 \\ \hline
+P & 10.7.5.68 & 255.255.255.252 & 10.111.25.161 \\ \hline
+Q & 10.7.5.72 & 255.255.255.252 & 10.111.25.161 \\ \hline
+R & 10.7.5.76 & 255.255.255.252 & 10.111.25.161 \\ \hline
+S & 10.7.5.80 & 255.255.255.252 & 10.111.25.161 \\ \hline
+T & 10.7.5.84 & 255.255.255.252 & 10.111.25.161 \\ \hline
+V & 10.61.6.184 & 255.255.255.252 & -\\
+  \hline
+ \end{tabular}
+ \captionof{table}{Tabla de ruteo R11}
+\end{table}
+
+\newpage
+\subsubsection{R12}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+Red & Dirección de red & Mascara & Next Hop\\ \hline
+A & 192.168.25.0 & 255.255.255.0 & 10.61.7.130 \\ \hline
+B & 10.111.25.192 & 255.255.255.192 & 10.61.7.129 \\ \hline
+C & 10.61.5.0 & 255.255.255.0 & 10.61.7.130 \\ \hline
+D & 10.111.25.128 & 255.255.255.224 & 10.61.7.130 \\ \hline
+E & 10.61.6.128 & 255.255.255.224 & 10.61.7.129 \\ \hline
+F & 10.111.25.160 & 255.255.255.240 & -\\ \hline
+G & 10.111.25.0 & 255.255.255.128 & -\\ \hline
+H & 10.61.7.128 & 255.255.255.128 & -\\ \hline
+I & 10.111.25.176 & 255.255.255.240 &10.111.25.164 \\ \hline
+J & 10.61.6.160 & 255.255.255.240 &10.61.7.130 \\ \hline
+L & 10.61.6.192 & 255.255.255.224 &10.61.7.129 \\ \hline
+M & 10.61.6.176 & 255.255.255.252 & -\\ \hline
+N & 10.61.6.180 & 255.255.255.252 &10.61.7.131 \\ \hline
+O & 10.7.5.64 & 255.255.255.252 & 10.61.7.131 \\ \hline
+P & 10.7.5.68 & 255.255.255.252 & 10.61.7.129\\ \hline
+Q & 10.7.5.72 & 255.255.255.252 & 10.61.7.130 \\ \hline
+R & 10.7.5.76 & 255.255.255.252 & 10.61.7.131 \\ \hline
+S & 10.7.5.80 & 255.255.255.252 & 10.61.7.130 \\ \hline
+T & 10.7.5.84 & 255.255.255.252 &10.61.7.129 \\ \hline
+V & 10.61.6.184 & 255.255.255.252 & -\\
+  \hline
+ \end{tabular}
+ \captionof{table}{Tabla de ruteo R12}
+\end{table}
+
+\newpage
+\subsubsection{R13}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+Red & Dirección de red & Mascara & Next Hop\\ \hline
+A & 192.168.25.0 & 255.255.255.0 & 10.111.25.163 \\ \hline
+B & 10.111.25.192 & 255.255.255.192 & -\\ \hline
+C & 10.61.5.0 & 255.255.255.0 &10.111.25.163 \\ \hline
+D & 10.111.25.128 & 255.255.255.224 & 10.111.25.163 \\ \hline
+E & 10.61.6.128 & 255.255.255.224 & 10.111.25.161 \\ \hline
+F & 10.111.25.160 & 255.255.255.240 &10.111.25.163 \\ \hline
+G & 10.111.25.0 & 255.255.255.128 & -\\ \hline
+H & 10.61.7.128 & 255.255.255.128 & 10.111.25.161\\ \hline
+I & 10.111.25.176 & 255.255.255.240 &10.111.25.162 \\ \hline
+J & 10.61.6.160 & 255.255.255.240 & 10.111.25.163 \\ \hline
+L & 10.61.6.192 & 255.255.255.224 & 10.111.25.162 \\ \hline
+M & 10.61.6.176 & 255.255.255.252 & 20 10.61.6.185 \\ \hline
+N & 10.61.6.180 & 255.255.255.252 & 10.111.25.163 \\ \hline
+O & 10.7.5.64 & 255.255.255.252 &	10.111.25.162 \\ \hline
+P & 10.7.5.68 & 255.255.255.252 & 10.111.25.162 \\ \hline
+Q & 10.7.5.72 & 255.255.255.252 & 10.111.25.163 \\ \hline
+R & 10.7.5.76 & 255.255.255.252 & 10.111.25.162 \\ \hline
+S & 10.7.5.80 & 255.255.255.252 & 10.111.25.162\\ \hline
+T & 10.7.5.84 & 255.255.255.252 & 10.111.25.163 \\ \hline
+V & 10.61.6.184 & 255.255.255.252 & -\\
+  \hline
+ \end{tabular}
+ \captionof{table}{Tabla de ruteo R13}
+\end{table}
+
+\newpage
+\subsubsection{R14}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+Red & Dirección de red & Mascara & Next Hop\\ \hline
+A & 192.168.25.0 & 255.255.255.0 & 10.61.6.181 \\ \hline
+B & 10.111.25.192 & 255.255.255.192 & 10.61.6.131 \\ \hline
+C & 10.61.5.0 & 255.255.255.0 & -\\ \hline
+D & 10.111.25.128 & 255.255.255.224 & -\\ \hline
+E & 10.61.6.128 & 255.255.255.224 & -\\ \hline
+F & 10.111.25.160 & 255.255.255.240 & 10.61.6.131 \\ \hline
+G & 10.111.25.0 & 255.255.255.128 & 10.61.6.131 \\ \hline
+H & 10.61.7.128 & 255.255.255.128 & 10.61.6.131 \\ \hline
+I & 10.111.25.176 & 255.255.255.240 & 10.61.6.181 \\ \hline
+J & 10.61.6.160 & 255.255.255.240 & -\\ \hline
+L & 10.61.6.192 & 255.255.255.224 & 10.61.6.181 \\ \hline
+M & 10.61.6.176 & 255.255.255.252 & 10.61.6.181 \\ \hline
+N & 10.61.6.180 & 255.255.255.252 & -\\ \hline
+O & 10.7.5.64 & 255.255.255.252 & 10.61.6.181 \\ \hline
+P & 10.7.5.68 & 255.255.255.252 & 10.61.6.181 \\ \hline
+Q & 10.7.5.72 & 255.255.255.252 & -\\ \hline
+R & 10.7.5.76 & 255.255.255.252 & 10.61.6.181 \\ \hline
+S & 10.7.5.80 & 255.255.255.252 & -\\ \hline
+T & 10.7.5.84 & 255.255.255.252 & -\\ \hline
+V & 10.61.6.184 & 255.255.255.252 & -\\
+  \hline
+ \end{tabular}
+ \captionof{table}{Tabla de ruteo R14}
+\end{table}
+
+\newpage
+\subsubsection{R15}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+Red & Dirección de red & Mascara & Next Hop\\ \hline
+A & 192.168.25.0 & 255.255.255.0 & 10.7.5.81 \\ \hline
+B & 10.111.25.192 & 255.255.255.192 & 10.7.5.81 \\ \hline
+C & 10.61.5.0 & 255.255.255.0 & -\\ \hline
+D & 10.111.25.128 & 255.255.255.224 & -\\ \hline
+E & 10.61.6.128 & 255.255.255.224 & -\\ \hline
+F & 10.111.25.160 & 255.255.255.240 & 10.61.6.130 \\ \hline
+G & 10.111.25.0 & 255.255.255.128 & 10.7.5.85 \\ \hline
+H & 10.61.7.128 & 255.255.255.128 & 10.7.5.85 \\ \hline
+I & 10.111.25.176 & 255.255.255.240 & 10.7.5.81 \\ \hline
+J & 10.61.6.160 & 255.255.255.240 & -\\ \hline
+L & 10.61.6.192 & 255.255.255.224 & 10.7.5.81 \\ \hline
+M & 10.61.6.176 & 255.255.255.252 & -\\ \hline
+N & 10.61.6.180 & 255.255.255.252 & -\\ \hline
+O & 10.7.5.64 & 255.255.255.252 & 10.7.5.81 \\ \hline
+P & 10.7.5.68 & 255.255.255.252 & 10.7.5.73 \\ \hline
+Q & 10.7.5.72 & 255.255.255.252 & -\\ \hline
+R & 10.7.5.76 & 255.255.255.252 & 10.7.5.85 \\ \hline
+S & 10.7.5.80 & 255.255.255.252 & -\\ \hline
+T & 10.7.5.84 & 255.255.255.252 & -\\ \hline
+V & 10.61.6.184 & 255.255.255.252 & 10.7.5.85 \\
+  \hline
+ \end{tabular}
+ \captionof{table}{Tabla de ruteo R15}
+\end{table}
+
+\newpage
+\subsubsection{R16}
+\begin{table}[!htbp]
+\centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+Red & Dirección de red & Mascara & Next Hop\\ \hline
+A & 192.168.25.0 & 255.255.255.0 &10.61.6.130 \\ \hline
+B & 10.111.25.192 & 255.255.255.192 & 10.61.6.131 \\ \hline
+C & 10.61.5.0 & 255.255.255.0 & -\\ \hline
+D & 10.111.25.128 & 255.255.255.224 & -\\ \hline
+E & 10.61.6.128 & 255.255.255.224 & -\\ \hline
+F & 10.111.25.160 & 255.255.255.240 & 10.61.6.131 \\ \hline
+G & 10.111.25.0 & 255.255.255.128 & 10.61.6.131 \\ \hline
+H & 10.61.7.128 & 255.255.255.128 & 10.61.6.130 \\ \hline
+I & 10.111.25.176 & 255.255.255.240 & 10.61.6.130 \\ \hline
+J & 10.61.6.160 & 255.255.255.240 & -\\ \hline
+L & 10.61.6.192 & 255.255.255.224 & 10.61.6.130\\ \hline
+M & 10.61.6.176 & 255.255.255.252 & 10.61.6.130 \\ \hline
+N & 10.61.6.180 & 255.255.255.252 & -\\ \hline
+O & 10.7.5.64 & 255.255.255.252 &10.61.6.130 \\ \hline
+P & 10.7.5.68 & 255.255.255.252 &10.61.6.130 \\ \hline
+Q & 10.7.5.72 & 255.255.255.252 & -\\ \hline
+R & 10.7.5.76 & 255.255.255.252 & 10.61.6.130 \\ \hline
+S & 10.7.5.80 & 255.255.255.252 & -\\ \hline
+T & 10.7.5.84 & 255.255.255.252 & -\\ \hline
+V & 10.61.6.184 & 255.255.255.252 & -\\
+  \hline
+ \end{tabular}
+ \captionof{table}{Tabla de ruteo R16}
+\end{table}
+
+\newpage
+\subsection{Ruteo Dinámico}
+		\subsubsection{Introducción}
+			OSPF es un protocolo de ruteo dinámico basado en el algoritmo de \textit{Dijkstra}. El mismo utiliza como métrica el ancho de banda
+			de las redes que se encuentran bajo el mismo, a menos que se le asigne manualmente un coste, cosa que no se realiza en el presente TP. 
+			Cuando mayor sea el ancho de banda del enlace, menor será el peso de los mismos a la hora de calcular los camínos mínimos. Como en la red a 
+			simular todos los enlaces son \textit{Ethernet}, el peso de todas las redes es el mismo. \\
+			\indent Cada router OSPF determina por medio del \textit{Hello Protocol} quienes son sus routers vecinos, y a partir de esta información
+			decide cuales son sus routers adyacentes. Al cada router determinar sus routers adyacentes, la red se pasa a modelar como un grafo, la cual
+			se va modificando cuando se cae algún enlace por medio de paquetes LSAs. Cada router recibe estos LSAs y forma con los mismos un árbol con		
+			la topología de la red, en la cual ellos son la raíz del mismo. A partir de este árbol, determinan como deben enrutarse los paquetes que llegan
+			a los mismos. \\
+			\indent La gran desventaja que posee OSPF respecto a otros protocolos es que si el mismo se implementa sobre una red muy compleja, entonces
+			el protocolo no sería implementable debido a que siempre habría un enlace cambiando de estado. Para prevenir esto, OSPF permite definir 
+			\textit{áreas}. De esta forma, se puede reducir el tamaño de la red e implementar el algoritmo de Dijkstra sobre un grafo más estable. \\
+			\indent En la práctica, cada router que implemente OSPF debe agregar en su configuración ciertos comandos. A continuación se exhiben las
+			directivas utilizadas:
+
+			\begin{itemize}
+				\item \textbf{router ospf process-id}: Indica que el router va a correr un proceso OSPF identificado por un número de ID. Dado que varios
+				procesos OSPF pueden correr en un mismo router (aunque no se lo recomienda), se debe colocar un identificador del mismo.
+				\item \textbf{network address wildcard-mask area area-id}: Con este comando le especificamos al router cuales de las redes que el mismo posee
+				conectado directamente redistribuirán los LSAs. Se debe colocar la dirección de red de la misma, su máscara invertida, y el área a la cual 
+				pertenece. 
+				\item \textbf{redistribute static subnets}: Esta directiva es opcional. Permite redistribuir en la red que implementa OSPF las rutas estáticas
+				que aparezcan en la tabla de ruteo del mismo. La palabra clave \textit{subnets} es esencial en la configuración de la topología implementada debido
+				a que si no se coloca la misma OSPF solo redistribuiría la entrada de ruteo con mayor dirección IP. Solamente se aplica en los \textit{borders routers}.
+			\end{itemize}
+
+		\subsubsection{Desarrollo}
+			La sede Mercedes debe ser configurada con \textit{Ruteo Dinámico}. Como se puede ver en la figura \ref{fig002}, los enrutadores en los cuales se 
+			debe configurar este protocolo son R1, R2, R3, R4, R5, R6 y R7. A continuación se muestra la configuración de cada uno de los routers: \\
+
+			\textbf{R1:}	
+			\begin{verbatim}
+				router ospf 100
+				network 192.168.25.0 0.0.0.255 area 0
+				redistribute static subnets
+			\end{verbatim}
+
+			\vspace{1cm}
+			\textbf{R2:}
+			\begin{verbatim}
+				router ospf 100
+				network 192.168.25.0 0.0.0.255 area 0
+				redistribute static subnets
+			\end{verbatim}	
+
+			\vspace{1cm}
+			\textbf{R3:}
+			\begin{verbatim}
+				router ospf 100
+				network 192.168.25.0 0.0.0.255 area 0
+				network 10.111.25.176 0.0.0.15 area 0
+			\end{verbatim}	
+
+			\vspace{1cm}
+			\textbf{R4:}
+			\begin{verbatim}
+				router ospf 100
+				network 192.168.25.0 0.0.0.255 area 0
+				network 10.61.6.192  0.0.0.31 area 0
+			\end{verbatim}	
+
+			\vspace{1cm}
+			\textbf{R5:}
+			\begin{verbatim}
+				router ospf 100
+				network 10.111.25.192 0.0.0.63 area 0
+				network 10.61.6.192 0.0.0.31 area 0
+			\end{verbatim}	
+
+			\vspace{1cm}
+			\textbf{R6:}
+			\begin{verbatim}
+				router ospf 100
+				network 10.61.6.192 0.0.0.31 area 0
+				network 10.111.25.176 0.0.0.15 area 0
+				network 10.111.25.192 0.0.0.63 area 0
+			\end{verbatim}	
+
+			\vspace{1cm}
+			\textbf{R7:}
+			\begin{verbatim}
+				router ospf 100
+				network 10.111.25.192 0.0.0.63 area 0
+				redistribute static subnets
+			\end{verbatim}	

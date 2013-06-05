@@ -1,0 +1,452 @@
+autostart = False
+version = 0.8.3
+[127.0.0.1:7202]
+    workingdir = /tmp
+    udp = 10200
+    [[3640]]
+        image = /root/ios/IOS/c3640-js-mz.124-10.bin
+        idlepc = 0x604eb200
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ETHSW SWJ]]
+        1 = access 1 R18 e0/1
+        x = -411.78845533
+        y = 232.693434176
+        z = 1.0
+    [[ETHSW SWD]]
+        1 = access 1 R17 e0/1
+        2 = access 1 R18 e0/0
+        x = -171.886868352
+        y = 270.462986798
+        z = 1.0
+        hx = 21.5710678119
+        hy = -22.1715728753
+    [[ROUTER Internet]]
+        model = 3640
+        console = 2019
+        aux = 2519
+        cnfg = configs/Internet.cfg
+        slot0 = NM-4E
+        e0/0 = R7 e0/1
+        e0/1 = R13 e0/1
+        x = 616.440692219
+        y = -67.4751801067
+        z = 1.0
+        hx = 16.2842712475
+        hy = -18.7573593129
+    [[ROUTER R17]]
+        model = 3640
+        console = 2017
+        aux = 2517
+        cnfg = configs/R17.cfg
+        slot0 = NM-4E
+        e0/0 = SWC 2
+        e0/1 = SWD 1
+        x = -48.3969696191
+        y = 303.597979746
+        z = 1.0
+    [[ROUTER R18]]
+        model = 3640
+        console = 2018
+        aux = 2518
+        cnfg = configs/R18.cfg
+        slot0 = NM-4E
+        e0/0 = SWD 2
+        e0/1 = SWJ 1
+        x = -281.582827843
+        y = 259.460894757
+        z = 1.0
+[127.0.0.1:7203]
+    workingdir = /tmp
+    udp = 10300
+    [[3640]]
+        image = /root/ios/IOS/c3640-js-mz.124-10.bin
+        idlepc = 0x604eb200
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ROUTER R5]]
+        model = 3640
+        console = 2023
+        aux = 2521
+        cnfg = configs/R5.cfg
+        slot0 = NM-4E
+        e0/0 = SWL 2
+        e0/1 = SWB 4
+        x = 273.116882455
+        y = -221.825468532
+        z = 1.0
+[127.0.0.1:7200]
+    workingdir = /tmp
+    udp = 10000
+    [[3640]]
+        image = /root/ios/IOS/c3640-js-mz.124-10.bin
+        idlepc = 0x604eb200
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ETHSW SWI]]
+        1 = access 1 R3 e0/0
+        2 = access 1 R6 e0/0
+        x = 70.9091629284
+        y = -330.558441227
+        z = 1.0
+    [[ETHSW SWH]]
+        1 = access 1 R8 e0/1
+        2 = access 1 R9 e0/0
+        3 = access 1 R10 e0/0
+        4 = access 1 R12 e0/0
+        x = 4.08073580369
+        y = -47.8233764908
+        z = 1.0
+    [[ETHSW SWL]]
+        1 = access 1 R6 e0/1
+        2 = access 1 R5 e0/0
+        3 = access 1 R4 e0/0
+        x = 116.163996924
+        y = -208.936074863
+        z = 1.0
+    [[ETHSW SWA]]
+        1 = access 1 R1 e0/0
+        2 = access 1 R2 e0/0
+        3 = access 1 R3 e0/2
+        4 = access 1 R4 e0/2
+        x = -258.845237791
+        y = -225.078210487
+        z = 1.0
+        hx = 18.3284271247
+        hy = -22.1715728753
+    [[ETHSW SWB]]
+        1 = access 1 R6 e0/2
+        2 = access 1 R7 e0/0
+        4 = access 1 R5 e0/1
+        x = 414.563058585
+        y = -302.27416998
+        z = 1.0
+    [[FRSW FrameRelay]]
+        1:105 = 5:501
+        1:108 = 8:801
+        1:109 = 9:901
+        5:501 = 1:105
+        5:508 = 8:805
+        5:509 = 9:905
+        8:801 = 1:108
+        8:805 = 5:508
+        8:809 = 9:908
+        9:901 = 1:109
+        9:905 = 5:509
+        9:908 = 8:809
+        8 = R8 s1/0
+        1 = R1 s1/0
+        5 = R15 s1/0
+        9 = R9 s1/0
+        x = -417.479797464
+        y = 10.5588745031
+        z = 1.0
+    [[ROUTER R4]]
+        model = 3640
+        console = 2022
+        aux = 2522
+        cnfg = configs/R4.cfg
+        slot0 = NM-4E
+        e0/0 = SWL 3
+        e0/2 = SWA 4
+        x = -11.0954544293
+        y = -183.786796565
+        z = 1.0
+    [[ROUTER R6]]
+        model = 3640
+        console = 2006
+        aux = 2506
+        cnfg = configs/R6.cfg
+        slot0 = NM-4E
+        e0/0 = SWI 2
+        e0/1 = SWL 1
+        e0/2 = SWB 1
+        x = 262.338095116
+        y = -299.526911934
+        z = 1.0
+        hx = 28.8994949366
+        hy = -19.3431457505
+    [[ROUTER R7]]
+        model = 3640
+        console = 2007
+        aux = 2507
+        cnfg = configs/R7.cfg
+        slot0 = NM-4E
+        e0/0 = SWB 2
+        e0/1 = Internet e0/0
+        x = 504.182899633
+        y = -198.529003975
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3640
+        console = 2001
+        aux = 2501
+        cnfg = configs/R1.cfg
+        slot0 = NM-4E
+        e0/0 = SWA 1
+        slot1 = NM-4T
+        s1/0 = FrameRelay 1
+        x = -415.443650814
+        y = -191.965512115
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3640
+        console = 2002
+        aux = 2502
+        cnfg = configs/R2.cfg
+        slot0 = NM-4E
+        e0/0 = SWA 2
+        e0/1 = R8 e0/0
+        x = -177.632467632
+        y = -173.793939239
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3640
+        console = 2003
+        aux = 2503
+        cnfg = configs/R3.cfg
+        slot0 = NM-4E
+        e0/0 = SWI 1
+        e0/2 = SWA 3
+        x = -40.3502884251
+        y = -287.060966544
+        z = 1.0
+    [[ROUTER R8]]
+        model = 3640
+        console = 2008
+        aux = 2508
+        cnfg = configs/R8.cfg
+        slot0 = NM-4E
+        e0/0 = R2 e0/1
+        e0/1 = SWH 1
+        slot1 = NM-4T
+        s1/0 = FrameRelay 8
+        x = -176.315800539
+        y = -57.4751801066
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = /tmp
+    udp = 10100
+    [[3640]]
+        image = /root/ios/IOS/c3640-js-mz.124-10.bin
+        idlepc = 0x604eb200
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ETHSW SWC]]
+        1 = access 1 R16 e0/1
+        2 = access 1 R17 e0/0
+        x = 97.2157287526
+        y = 300.918830921
+        z = 1.0
+        hx = 22.7279220614
+        hy = -20.5147186258
+    [[ETHSW SWE]]
+        1 = access 1 R15 e0/0
+        2 = access 1 R14 e0/1
+        3 = access 1 R16 e0/0
+        x = 182.494949366
+        y = 176.923881554
+        z = 1.0
+    [[ETHSW SWG]]
+        1 = access 1 R12 e0/2
+        x = 367.044768622
+        y = -72.1284630183
+        z = 1.0
+        hx = 15.9142135624
+        hy = -20.7573593129
+    [[ETHSW SWF]]
+        1 = access 1 R12 e0/1
+        2 = access 1 R10 e0/1
+        3 = access 1 R13 e0/0
+        4 = access 1 R11 e0/0
+        x = 268.313275223
+        y = 70.3847763109
+        z = 1.0
+        hx = 29.6421356237
+        hy = -19.3431457505
+    [[ROUTER R16]]
+        model = 3640
+        console = 2016
+        aux = 2516
+        cnfg = configs/R16.cfg
+        slot0 = NM-4E
+        e0/0 = SWE 3
+        e0/1 = SWC 1
+        x = 277.845671069
+        y = 241.74220741
+        z = 1.0
+    [[ROUTER R14]]
+        model = 3640
+        console = 2014
+        aux = 2514
+        cnfg = configs/R14.cfg
+        slot0 = NM-4E
+        e0/0 = R11 e0/1
+        e0/1 = SWE 2
+        x = 327.833477759
+        y = 151.362481734
+        z = 1.0
+    [[ROUTER R15]]
+        model = 3640
+        console = 2015
+        aux = 2515
+        cnfg = configs/R15.cfg
+        slot0 = NM-4E
+        e0/0 = SWE 1
+        slot1 = NM-4T
+        s1/0 = FrameRelay 5
+        x = -19.1707063236
+        y = 153.318759132
+        z = 1.0
+    [[ROUTER R12]]
+        model = 3640
+        console = 2012
+        aux = 2512
+        cnfg = configs/R12.cfg
+        slot0 = NM-4E
+        e0/0 = SWH 4
+        e0/1 = SWF 1
+        e0/2 = SWG 1
+        x = 208.323809767
+        y = -82.8061325473
+        z = 1.0
+    [[ROUTER R13]]
+        model = 3640
+        console = 2013
+        aux = 2513
+        cnfg = configs/R13.cfg
+        slot0 = NM-4E
+        e0/0 = SWF 3
+        e0/1 = Internet e0/1
+        x = 467.068109219
+        y = 50.8111831824
+        z = 1.0
+        hx = 34.7989898732
+        hy = -19.3431457505
+    [[ROUTER R10]]
+        model = 3640
+        console = 2010
+        aux = 2510
+        cnfg = configs/R10.cfg
+        slot0 = NM-4E
+        e0/0 = SWH 3
+        e0/1 = SWF 2
+        x = 103.622366365
+        y = -14.8477631084
+        z = 1.0
+        hx = 17.3284271247
+        hy = -25.0
+    [[ROUTER R11]]
+        model = 3640
+        console = 2011
+        aux = 2511
+        cnfg = configs/R11.cfg
+        slot0 = NM-4E
+        e0/0 = SWF 4
+        e0/1 = R14 e0/0
+        x = -0.462986797254
+        y = 57.0588745034
+        z = 1.0
+    [[ROUTER R9]]
+        model = 3640
+        console = 2009
+        aux = 2509
+        cnfg = configs/R9.cfg
+        slot0 = NM-4E
+        e0/0 = SWH 2
+        slot1 = NM-4T
+        s1/0 = FrameRelay 9
+        x = -117.129942314
+        y = 29.3238097673
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = "Sede Azul"
+        x = 631.029437252
+        y = 227.718254069
+    [[NOTE 2]]
+        text = "Sede Zárate"
+        x = 632.100505063
+        y = 9.55887450305
+    [[NOTE 3]]
+        text = "Sede Mercedes"
+        x = 632.100505063
+        y = -272.174098192
+    [[Cloud Telnet:Server]]
+        symbol = computer
+        x = -11.9974746827
+        y = 220.647186257
+        z = 1.0
+    [[Cloud HostA]]
+        symbol = computer
+        x = 347.884776311
+        y = 0.659379566466
+        z = 1.0
+    [[Cloud HostC]]
+        symbol = computer
+        x = -412.822943215
+        y = -316.359956417
+        z = 1.0
+    [[Cloud FTPServer]]
+        symbol = computer
+        x = 459.84314575
+        y = -62.7548339959
+        z = 1.0
+    [[Cloud HostB]]
+        symbol = computer
+        x = 250.553823869
+        y = 325.443217538
+        z = 1.0
+    [[Cloud Telnet.Server]]
+        symbol = computer
+        x = 30.4289321881
+        y = 236.203535444
+        z = 1.0
+    [[Cloud DNS2]]
+        symbol = computer
+        x = 496.774476352
+        y = -326.536886299
+        z = 1.0
+    [[Cloud DNS1]]
+        symbol = computer
+        x = -277.06139982
+        y = 162.617749006
+        z = 1.0
+    [[Cloud DNSRoot]]
+        symbol = computer
+        x = -244.301081914
+        y = -313.502092041
+        z = 1.0
+    [[Cloud WebServer]]
+        symbol = computer
+        x = -170.090837071
+        y = -350.872583001
+        z = 1.0
+    [[SHAPE 1]]
+        type = rectangle
+        x = -474.468650176
+        y = 130.481710037
+        width = 1081.87337522
+        height = 253.477272148
+        z = -2.0
+    [[SHAPE 2]]
+        type = rectangle
+        x = -478.0
+        y = -107.48023074
+        width = 1082.82842712
+        height = 218.669047558
+        z = -2.0
+    [[SHAPE 3]]
+        type = rectangle
+        x = -479.418397644
+        y = -380.423448278
+        width = 1081.87337521
+        height = 258.801081914
+        z = -2.0

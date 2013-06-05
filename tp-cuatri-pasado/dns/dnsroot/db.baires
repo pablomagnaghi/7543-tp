@@ -1,0 +1,35 @@
+$TTL	86400
+@	IN	SOA	nsroot.amapola.mercedes root. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			  86400 )	; Negative Cache TTL
+;
+
+@	                      IN    NS   nsroot.amapola.mercedes
+nsroot.amapola.mercedes       IN    A    192.168.25.7
+
+azul              IN    NS    ns1.dalia.azul
+ns1.dalia.azul    IN    A     10.111.25.131
+
+mercedes              IN    NS    ns2.begonia.mercedes
+zarate                IN    NS    ns2.begonia.mercedes
+ns2.begonia.mercedes  IN    A     10.111.25.197
+
+
+; alias
+ws           IN    CNAME    webserver.amapola.mercedes
+www          IN    CNAME    webserver.amapola.mercedes
+hostc        IN    CNAME    hostc.amapola.mercedes
+c            IN    CNAME    hostc.amapola.mercedes
+ns2          IN    CNAME    ns2.begonia.mercedes
+
+hosta        IN    CNAME    hosta.fresia.zarate
+a            IN    CNAME    a.fresia.zarate
+ftp          IN    CNAME    ftp.geranio.zarate
+
+telserver    IN    CNAME    telserver.azul
+hostb        IN    CNAME    hostb.clavel.azul
+b            IN    CNAME    hostb.clavel.azul
+ns1          IN    CNAME    ns1.dalia.azul

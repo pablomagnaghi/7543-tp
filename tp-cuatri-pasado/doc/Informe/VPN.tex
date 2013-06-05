@@ -1,0 +1,71 @@
+\section{Tunnel VPN}
+
+Puesto que los servicios (como el servidor Web, Telnet, FTP y DNS) asi como tambien una serie de 
+host particulares (Host A, B y C) se deben correr en computadoras separadas a la que se simula 
+la topología con GNS3, se debió buscar un mecanismo que permita comunicar todas las computadoras,
+sin alterar a su vez la red global sobre la cual se realizan las simulaciones.\\
+Dicho mecanismo fue el de implementar una serie de VPNs (Virtual Private Networks) entre la 
+computadora sobre la cual se simula la topología y el resto de las terminales.\\
+Una VPN es una tecnología de red que permite una extención segura de una red local, la cual se 
+encuentra corriendo sobre una red global (en nuestro caso la red de la facultad). Se dice que es 
+una extención segura puesto que una vpn debe garantizar:\\
+
+\begin{itemize}
+	\item Autentificación
+	\item Integridad
+	\item Confidencialidad
+	\item No repudio
+\end{itemize} 
+
+Sin embargo, dado que en nuestro caso el objetivo de la vpn es no inundar la red global con
+paquetes propios (por ejemplo paquetes ARP de la simulación), solo se utilizó la vpn 
+como un mecanismo de tunneling y no se aplicó ningún método de encriptación.\\
+
+Para la implementación de la vpn, se opto por usar OpenVPN, el cual es un daemon basado en 
+OpenSSL, el cual soporta, seguridad SSL/TLS, ethernet bridging, tunneling TCP o UDP, entre
+otros. Como se mencionó anteriormente, el objetivo principal de la vpn en nuestro caso es el de
+generar un tunel que permita regular el tráfico que la topología envía a la red global.\\
+Para simplificar el diseño, en la maquina donde se ejecuta la topología, se crearon 
+dispositivos tap con números fijos para cada una de las terminales necesarias (WebServer, Host A, 
+DNS1, etc). Una vez creados los tap, en la topología se colocó un dispositivo \textit{Cloud} que 
+representase a cada terminal y se le asignó a cada uno el tap correspondiente. A continuación se 
+muestra la tabla \ref{tab063} con la configuración resultante de el número de tap y el puerto 
+por el cual se comunican las computadoras.
+
+\begin{table}[!htbp]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+	\hline
+	Terminal & Dispositivo & Puerto \\	
+	\hline
+	DNS1 & tap1 & 1195 \\
+	\hline
+	DNS2 & tap2 & 1196 \\
+	\hline
+	DNS Root & tap3 & 1197 \\
+	\hline
+	FTP Server & tap4 & 1198 \\
+	\hline
+	Web Server & tap5 & 1199 \\
+	\hline
+	Telnet Server C & tap6 & 1200 \\
+	\hline
+	Telnet Server E & tap7 & 1201 \\
+	\hline
+	Host A & tap8 & 1202 \\
+	\hline
+	Host B & tap9 & 1203 \\
+	\hline
+	Host C & tap10 & 1204 \\
+	\hline
+	\end{tabular}
+	\caption{Tabla de las VPNs}
+	\label{tab063}
+\end{table}
+
+La configuración del lado de las terminales es mucho mas simple, puesto que solo es necesarió que
+exista un único tap creado por vez, de acuerdo al servició o host que se este simulando en el 
+momento. Para conectar dicha terminal con la topología solo basta crear un dispositivo tap al 
+cual se le indica la dirección IP de la computadora corriendo la topología y el número de puerto 
+al que se debe conectar, asi como tambien la dirección IP y mascara que dicho dispositivo debe
+tener en la red simulada.
