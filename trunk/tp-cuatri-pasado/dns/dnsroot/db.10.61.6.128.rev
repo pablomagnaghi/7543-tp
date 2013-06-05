@@ -1,0 +1,21 @@
+$TTL	604800
+@	IN	SOA	nsroot.amapola.mercedes.baires.dc.fi.uba.ar. root. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+
+@                      IN    NS       nsroot.amapola.mercedes.baires.dc.fi.uba.ar.
+
+128/27                 IN    NS       ns1.dalia.azul.baires.dc.fi.uba.ar.  ; espuela (azul)
+$GENERATE 128-159  $   IN    CNAME    $.128/27
+
+160/28                 IN    NS       ns1.dalia.azul.baires.dc.fi.uba.ar.  ; jazmin (azul)
+$GENERATE 160-175  $   IN    CNAME    $.160/28
+
+192/27                 IN    NS       ns2.begonia.mercedes.baires.dc.fi.uba.ar.  ; lirio (mercedes)
+$GENERATE 192-223  $   IN    CNAME    $.192/27
+
+

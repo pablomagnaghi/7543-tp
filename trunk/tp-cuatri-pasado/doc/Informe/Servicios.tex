@@ -1,0 +1,84 @@
+\section{Servicios}
+	\subsection{Webserver}
+
+	\indent Hypertext Transfer Protocol o HTTP es el protocolo usado en cada transacción de la World Wide Web.  Es un protocolo orientado a transacciones y sigue el esquema petición-respuesta entre \textit{un cliente y un servidor}. Al cliente que efectúa la petición (en general un navegador web) se lo conoce como \textit{user agent}. A la información transmitida se la llama \textit{recurso} y se la identifica mediante un localizador uniforme de recursos (URL).
+\indent El servidor HTTP Apache es un servidor web HTTP de código abierto, para plataformas Unix (BSD, GNU/Linux, etc.) y es el que se pretende emplear, particularmente en versión 2.
+\indent Se requiere para el servidor web dos configuraciones:
+\begin{itemize}
+\item Ubicar en la carpeta /etc/apache2/ del servidor el archivo apache2.conf con la configuración estándar del servidor relacionada al ambiente global. Debido a que el enunciado no hace mención sobre la configuración del servidor web, se elige la configuración estándar de apache2.
+
+\item Ubicar en la carpeta /var/www/ del servidor las páginas que se desean proveer a los clientes. Se ha desarrollado una página default, index.html.
+\end{itemize}
+
+\indent El puerto utilizado por default es el 8080 y se configura a través del archivo /etc/apache2/ports.conf.\\
+\indent Será posible luego, para un cliente, acceder a algún recurso del servidor web, a través de una petición de consola, o a través de una request en un cliente web, solicitando al url:
+
+\url{http://direccion_servidor:8080/index.html}
+o simplemente
+\url{http://direccion_servidor:8080/}
+
+
+	\subsection{Telnet}
+		\indent Telnet es un protocolo de red que permite la comunicación remota a otro host a través de una consola de comandos. Como FTP, es un
+		protocolo orientado a la conexión que corre bajo TCP a través de una arquitectura \textit{Cliente-Servidor}. El puerto predeterminado de 
+		\textit{telnet} es el 23. Debido a lo vulnerable que se vuelve el equipo que implementa este servicio, el mismo por lo general va acompañado
+		por algún protocolo que provea de la seguridad necesaria como \textit{ssh}. \\
+		\indent En el caso del presente trabajo práctico, debido a que el enunciado no hace mención sobre la configuración del servidor Telnet el, mismo no 
+		realiza autenticación alguna del cliente que desea conectarse ni se encarga de encriptar la información que viaja entre el Cliente y el Servidor. \\
+		\indent El servicio de Telnet a instalar es \textit{telnetd}. Luego de instalar el mismo, este se debe correr a través del service dispatcher
+		\textit{inetd}. \textit{inetd} es un demonio que atiende las solicitudes de conexión que llegan al equipo, llamando al servicio que deba atender
+		al llamado de conexión en función del puerto por el cual vino la misma. En el caso de \textit{telnet}, \textit{inetd} llamará a este servicio cada
+		vez que llegue una solicitud de conexión a través del puerto 23. \\
+		\indent Para verificar que el mismo levante las conexiones \textit{telnet} hay que asegurarse
+		que en el archivo de configuración de \textit{inetd} (/etc/inetd.conf)  se encuentre la línea correspondiente a telnet y que la misma no se 
+		encuentre comentada. La misma se exhibe a continuación: \\
+		\begin{verbatim}
+			telnet		stream	tcp	nowait	root	/usr/sbin/tcpd	/usr/sbin/in.telnetd
+		\end{verbatim} 
+
+	\subsection{FTP}
+		\indent FTP es un protocolo de red utilizado para intercambiar archivos entre hosts. El mismo es un protocolo orientado a la conexión,	
+		implementado bajo una arquitectura \textit{Cliente-Servidor}. El mismo corre bajo TCP y utiliza como número de puerto al realizar
+		una conexión el 21. De entre los muchos servicios FTP existentes, se eligió utilizar el 
+		servicio \textbf{vsftpd}. El mismo se puede descargar sin problemas de los repositorios de cualquier distribución de GNU/Linux. Como
+		cualquier servicio, luego de instalarlo el mismo es levantado cada vez que el sistema operativo bootea. \\
+		\indent El archivo de configuración de \textbf{vsftpd} se encuentra en el directorio \textit{/etc}. Debido a que el enunciado no 
+		hace mención sobre la configuración del servidor FTP, se elige la misma de forma arbitraria. A continuación se muestra el contenido
+		del archivo de configuración de vsftd.conf, obviando los comentarios de forma que queden visibles las líneas relevantes:	
+		
+		\begin{verbatim}
+			listen=YES
+			anonymous_enable=YES
+			local_enable=YES
+			write_enable=YES
+			local_umask=022
+			dirmessage_enable=YES
+			use_localtime=YES
+			xferlog_enable=YES
+			connect_from_port_20=NO
+			chroot_local_user=YES
+			secure_chroot_dir=/var/run/vsftpd/empty
+			pam_service_name=vsftpd
+			rsa_cert_file=/etc/ssl/private/vsftpd.pem
+		\end{verbatim}
+
+		Muchas de los comandos aquí mostrados vienen por defecto al instalar el servicio. Sin embargo, se debe prestar atención a algunos es especial.
+		Dado que el objetivo del TP es poder montar un servidor FTP y que los hosts conectados a la topología puedan interactuar con el mismo, se tienen
+		en cuenta los siguientes puntos:
+		\begin{itemize}
+			\item Se desea que los clientes no se tengan que autenticar a la hora de realizar una conexión con el servidor. De esta forma, es necesario que
+			en el archivo de configuración se encuentre la línea \textit{anonymous\_enable=YES}.
+			\item Debido a que las pruebas del presente trabajo se van a realizar en un laboratorio, es necesario que el servidor FTP permita la conexión
+			de host locales. Esto se especifica a partir de la línea \textit{local\_enable=YES}.
+			\item Se desea que el cliente pueda subir archivos al servidor cuando el mismo lo desee. Para darle este beneficio, es necesario que en el 
+			archivo de configuración se encuentre la línea \textit{write\_enable=YES}. 
+			\item Se desea aprisonar (Chroot Jail) al cliente en el directorio en el cual se loguea el mismo. Esta decisión es totalmente arbitraria y simplemente
+			fue colocada para probar algunas funcionalidades provistas por \textbf{vsftpd}. La principal funcionalidad de que un cliente se encuentre en una 
+			\textit{Chroot Jail} consiste en que el mismo no pueda subir a directorios superiores al que le fue asignado y pueda alterar datos de otro usuario o de
+			la máquina servidora en sí. De esta forma, para aprisonar al cliente en su carpeta de logueo se debe agregar al línea \textit{chroot\_local\_user=YES}.
+		\end{itemize}
+
+		Las líneas que no se mencionan que se encuentran en el archivo de configuración o bien no son lo suficientemente relevantes para ser explicadas, o bien
+		no fueron investigadas o testeadas a fondo como para realmente saber la importancia de las mismas. Se dejan las mismas dado que el servidor funciona
+		con las mismas. 
+

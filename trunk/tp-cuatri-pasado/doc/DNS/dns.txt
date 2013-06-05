@@ -1,0 +1,15 @@
+Existen tres servidores DNS y tres zonas (mercedes, zarate y azul).
+
+El DNS Root está en la red AMAPOLA de la zona MERCEDES con ip 192.168.25.7.
+Delega la autoridad en los restantes dos servidores de nivel dos, repartiendose:
+DNS1 en la red DALIA de la zona AZUL con ip 10.111.25.131, para la zona AZUL
+DNS2 en la red BERGONIA de la zona MERCEDES con ip 10.111.25.197, para el resto de las zonas (MERCEDES y ZARATE)
+
+La DB del Root solo tiene registros NS hacia los otros servidores DNS de nivel 2.
+La parte más compleja de este servidor está en la delegación del mapeo reverso. 
+Se notó que es una practica común crear nuevos nombres canónicos y hacer a la direcciones ip reales aliases de las primeras, en una relación uno a uno. En conjunto con la creación de un subdominio por cada subnet y el posterior otorgamiento de autoridad sobre este dominio al servidor que se desea que tenga autoridad sobre las ips reales, logra el cometido.
+En caso de no estar subneteado, se procede similarmente, delegando cada dirección al name server. Por simplificación se usó el statement $GENERATE para simplificar.
+
+Los DNS de nivel dos van a resolver al Root, por lo que si se cae el root, será imposible para los de nivel dos resolver querys incluso en el subdominio sobre el que tienen autoridad.
+
+ 

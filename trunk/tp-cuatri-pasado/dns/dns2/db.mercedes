@@ -1,0 +1,35 @@
+$TTL	604800
+@	IN	SOA	ns2.begonia root. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	        IN	NS	ns2.begonia
+ns2.begonia	IN	A	10.111.25.197
+
+; amapola
+webserver.amapola   IN    A    192.168.25.1
+r1.amapola          IN    A    192.168.25.2
+r2.amapola          IN    A    192.168.25.3
+r3.amapola          IN    A    192.168.25.4
+r4.amapola          IN    A    192.168.25.5
+hostc.amapola       IN    A    192.168.25.8
+dnsroot.amapola     IN    A    192.168.25.7
+
+; Begonia
+r5.begonia           IN    A    10.111.25.194
+r6.begonia           IN    A    10.111.25.193
+r7.begonia           IN    A    10.111.25.195
+ns2.begonia          IN    A    10.111.25.197
+
+; Iris
+r3.iris         IN    A    10.111.25.177
+r6.iris         IN    A    10.111.25.175
+
+; Lirio
+r4.lirio         IN    A    10.61.6.193
+r5.lirio         IN    A    10.61.6.194
+r6.lirio         IN    A    10.61.6.195
+

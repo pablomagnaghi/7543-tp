@@ -1,0 +1,16 @@
+$TTL	604800
+@	IN	SOA	ns2.begonia.mercedes.baires.dc.fi.uba.ar. root. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+
+@    IN    NS      ns2.begonia.mercedes.baires.dc.fi.uba.ar.
+
+161    IN    PTR     r10.fresia.zarate.baires.dc.fi.uba.ar.
+162    IN    PTR     r11.fresia.zarate.baires.dc.fi.uba.ar.
+163    IN    PTR     r12.fresia.zarate.baires.dc.fi.uba.ar.
+164    IN    PTR     r13.fresia.zarate.baires.dc.fi.uba.ar.
+165    IN    PTR     hosta.fresia.zarate.baires.dc.fi.uba.ar.
