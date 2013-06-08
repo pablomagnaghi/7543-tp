@@ -1,0 +1,4 @@
+zone "baires.dc.fi.uba.ar" in {
+  type master;
+  file "/etc/bind/db.baires";
+};
