@@ -15,20 +15,19 @@ ns1.lobo	IN	A	10.254.48.124
 r14.lobo           IN    A     10.61.6.129
 r15.lobo           IN    A     10.61.6.130
 r16.lobo           IN    A     10.61.6.131
-
-telserver1           IN    A     10.61.6.132
-ns1           IN    A     10.61.6.133
+telserver1.lobo           IN    A     10.61.6.132
+ns1.lobo           IN    A     10.61.6.133
 
 ; Mono
 r16.mono           IN    A     10.61.5.1
 r17.mono           IN    A     10.61.5.2
-telserver2           IN    A     10.61.5.3
-hostb           IN    A     10.61.5.4
+telserver2.mono           IN    A     10.61.5.3
+hostb.mono           IN    A     10.61.5.4
 
 ; Nutria
 r17.nutria           IN    A     10.61.7.225
 r18.nutria           IN    A     10.61.7.226
-telserver3           IN    A     10.61.7.227
+telserver3.nutria           IN    A     10.61.7.227
 
 ; Oso
 r18.oso           IN    A     10.61.6.193
