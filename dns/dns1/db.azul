@@ -1,0 +1,61 @@
+$TTL	604800
+@	IN	SOA	ns1.lobo root. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	        IN	NS	ns1.lobo
+ns1.lobo	IN	A	10.254.48.124 
+
+;TODO aca tenemos que poner la ip de DN1: 10.61.6.133;
+
+; Lobo
+r14.lobo           IN    A     10.61.6.129
+r15.lobo           IN    A     10.61.6.130
+r16.lobo           IN    A     10.61.6.131
+
+telserver1           IN    A     10.61.6.132
+ns1           IN    A     10.61.6.133
+
+; Mono
+r16.mono           IN    A     10.61.5.1
+r17.mono           IN    A     10.61.5.2
+telserver2           IN    A     10.61.5.3
+hostb           IN    A     10.61.5.4
+
+; Nutria
+r17.nutria           IN    A     10.61.7.225
+r18.nutria           IN    A     10.61.7.226
+telserver3           IN    A     10.61.7.227
+
+; Oso
+r18.oso           IN    A     10.61.6.193
+
+; Pulpo
+r1.pulpo           IN    A    10.7.5.65
+r8.pulpo           IN    A    10.7.5.66
+
+; Quail
+r1.quail           IN    A    10.7.5.69
+r2.quail           IN    A    10.7.5.70
+
+; Rata
+r1.rata           IN    A    10.7.5.73
+r15.rata           IN    A    10.7.5.74
+
+; Sapo
+r8.sapo           IN    A    10.7.5.77
+r15.sapo           IN    A    10.7.5.78
+
+; Tigre
+r8.tigre           IN    A   10.7.5.81
+r9.tigre           IN    A   10.7.5.82
+
+; Urraca
+r9.urraca           IN    A   10.7.5.85
+r15.urraca           IN    A  10.7.5.86
+
+
+

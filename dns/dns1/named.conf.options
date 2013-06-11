@@ -1,0 +1,37 @@
+options {
+	directory "/var/cache/bind";
+
+        allow-query {
+          any;
+        };
+
+        listen-on {
+          127.0.0.1;
+          //TODO Aca deberia ir la ip de DN1 que es la siguiente: 10.61.6.133;
+          10.254.48.124; // esta es mi ip de la computadora actual hay que cambiarla
+        };
+
+	// If there is a firewall between you and nameservers you want
+	// to talk to, you may need to fix the firewall to allow multiple
+	// ports to talk.  See http://www.kb.cert.org/vuls/id/800113
+
+	// If your ISP provided one or more IP addresses for stable 
+	// nameservers, you probably want to use them as forwarders.  
+	// Uncomment the following block, and insert the addresses replacing 
+	// the all-0's placeholder.
+
+	forwarders {
+		//TODO aca debe ir la ip del root que es: 192.168.25.7;
+		10.254.48.73; //ip de dx9
+	};
+
+	//========================================================================
+	// If BIND logs error messages about the root key being expired,
+	// you will need to update your keys.  See https://www.isc.org/bind-keys
+	//========================================================================
+//	dnssec-validation auto;
+
+	auth-nxdomain no;    # conform to RFC1035
+//	listen-on-v6 { any; };
+};
+
