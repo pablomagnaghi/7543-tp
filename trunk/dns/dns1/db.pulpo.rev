@@ -1,0 +1,13 @@
+$TTL	604800
+@	IN	SOA	ns1.lobo.azul.baires.dc.fi.uba.ar. root. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+
+@    IN   NS    ns1.lobo.azul.baires.dc.fi.uba.ar.
+
+69  IN   PTR   r1.pulpo.azul.baires.dc.fi.uba.ar.
+70  IN   PTR   r9.pulpo.azul.baires.dc.fi.uba.ar.
