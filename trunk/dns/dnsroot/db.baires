@@ -13,22 +13,32 @@ nsroot.ardilla.mercedes   IN    A    192.168.25.7
 azul                IN    NS    ns1.lobo.azul
 ns1.lobo.azul       IN    A     10.61.6.133
 
-mercedes            IN    NS    ns2.foca.mercedes
-zarate              IN    NS    ns2.foca.mercedes
-ns2.foca.mercedes   IN    A     10.111.25.133
+mercedes            IN    NS    ns2.foca.zarate
+zarate              IN    NS    ns2.foca.zarate
+ns2.foca.zarate     IN    A     10.111.25.133
 
 ; alias
-ws           IN    CNAME    webserver.ardilla.mercedes
-www          IN    CNAME    webserver.ardilla.mercedes
+nsroot       IN    CNAME    nsroot.ardilla.mercedes
+ns1          IN    CNAME    ns1.lobo.azul
+ns2          IN    CNAME    ns2.foca.zarate
+
 hostc        IN    CNAME    hostc.ardilla.mercedes
 c            IN    CNAME    hostc.ardilla.mercedes
-ns2          IN    CNAME    ns2.foca.mercedes
 
 hosta        IN    CNAME    hosta.jaguar.zarate
-a            IN    CNAME    a.jaguar.zarate
-ftp          IN    CNAME    ftp.gato.zarate
+a            IN    CNAME    hosta.jaguar.zarate
 
-telserver    IN    CNAME    telserver.azul
 hostb        IN    CNAME    hostb.mono.azul
 b            IN    CNAME    hostb.mono.azul
-ns1          IN    CNAME    ns1.lobo.azul
+
+ws           IN    CNAME    webserver.ardilla.mercedes
+www          IN    CNAME    webserver.ardilla.mercedes
+
+ftp          IN    CNAME    ftp.gato.zarate
+
+telserver1   IN    CNAME    telserver1.lobo.azul
+telserver2   IN    CNAME    telserver2.mono.azul
+telserver3   IN    CNAME    telserver3.nutria.azul
+
+internetb    IN    CNAME    internetb.hiena.zarate
+interneta    IN    CNAME    interneta.iguana.zarate
