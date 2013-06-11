@@ -1,27 +1,40 @@
 $TTL	604800
-@	IN	SOA	ns2.begonia.mercedes.baires.dc.fi.uba.ar root. (
+@	IN	SOA	ns2.foca root. (
 			      2		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
 			 604800 )	; Negative Cache TTL
 ;
-@	        IN	NS	ns2.begonia.mercedes.baires.dc.fi.uba.ar
-ns2.begonia.mercedes.baires.dc.fi.uba.ar  IN  A  10.111.25.197
+@	        IN	NS	ns2.foca
+ns2.foca  IN  A  10.111.25.197
 
-; Fresia
-r10.fresia              IN    A    10.111.25.161
-r11.fresia              IN    A    10.111.25.162
-r12.fresia              IN    A    10.111.25.163
-r13.fresia              IN    A    10.111.25.164
-hosta.fresia            IN    A    10.111.25.165
+; Foca
+r8.foca             IN    A    10.111.25.129
+r9.foca             IN    A    10.111.25.130
+r10.foca            IN    A    10.111.25.131
+r12.foca            IN    A    10.111.25.132
+ns2.foca            IN    A    10.111.25.133
 
-; Geranio
-ftp.geranio           IN    A    10.111.25.1
-r12.geranio           IN    A    10.111.25.2
+; Gato
+ftp.gato            IN    A    10.111.25.1
+r12.gato            IN    A    10.111.25.2
 
-; Hortensia
-r8.hortensia       IN    A    10.61.7.129
-r9.hortensia       IN    A    10.61.7.130
-r10.hortensia      IN    A    10.61.7.131
-r12.hortensia      IN    A    10.61.7.132
+; Hiena
+r7.hiena            IN    A    157.63.5.1
+internetb.hiena     IN    A    157.63.5.2
+
+; Iguana
+r13.iguana          IN    A    157.63.5.6
+interneta.iguana    IN    A    157.63.5.5
+
+; Jaguar
+r10.iguana          IN    A    10.61.6.177
+r11.iguana          IN    A    10.61.6.178
+r12.iguana          IN    A    10.61.6.179
+r13.iguana          IN    A    10.61.6.180
+hosta.iguana        IN    A    10.61.6.181
+
+; Koala
+r11.koala           IN    A    10.61.6.213
+r14.koala           IN    A    10.61.6.214
