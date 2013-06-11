@@ -1,0 +1,9 @@
+zone "mercedes.baires.dc.fi.uba.ar" in {
+  type master;
+  file "/etc/bind/db.mercedes";
+};
+
+zone "zarate.baires.dc.fi.uba.ar" in {
+  type master;
+  file "/etc/bind/db.zarate";
+};

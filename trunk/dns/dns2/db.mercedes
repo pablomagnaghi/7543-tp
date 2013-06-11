@@ -1,0 +1,37 @@
+$TTL	604800
+@	IN	SOA	ns2.foca root. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	        IN	NS	ns2.foca
+ns2.foca	IN	A	10.111.25.133
+
+; ardilla
+webserver.ardilla   IN    A    192.168.25.1
+r1.ardilla          IN    A    192.168.25.2
+r2.ardilla          IN    A    192.168.25.3
+r3.ardilla          IN    A    192.168.25.4
+r4.ardilla          IN    A    192.168.25.5
+hostc.ardilla       IN    A    192.168.25.6
+nsroot.ardilla      IN    A    192.168.25.7
+
+; burro
+r3.burro            IN    A    10.61.6.161
+r6.burro            IN    A    10.61.6.162
+
+; caballo
+r5.caballo          IN    A    10.61.7.129
+r6.caballo          IN    A    10.61.7.130
+r7.caballo          IN    A    10.61.7.131
+
+; dingo
+r4.dingo            IN    A    10.61.7.193
+r5.dingo            IN    A    10.61.7.194
+r6.dingo            IN    A    10.61.7.195
+
+; elefante
+r2.elefante         IN   A     10.61.6.209
+r8.elefante         IN   A     10.61.6.210
