@@ -1,0 +1,27 @@
+$TTL	604800
+@	IN	SOA	nsroot.ardilla.mercedes.baires.dc.fi.uba.ar. root. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@                     IN    NS    nsroot.ardilla.mercedes.baires.dc.fi.uba.ar.
+
+64/30                 IN    NS       ns1.lobo.azul.baires.dc.fi.uba.ar.  ; pulpo (azul)
+$GENERATE 64-67  $     IN    CNAME    $.64/30
+
+68/30                 IN    NS       ns1.lobo.azul.baires.dc.fi.uba.ar.  ; quail (azul)
+$GENERATE 68-71  $     IN    CNAME    $.68/30
+
+72/30                  IN    NS       ns1.lobo.azul.baires.dc.fi.uba.ar.  ; rata (azul)
+$GENERATE 72-75  $     IN    CNAME    $.72/30
+
+76/30                  IN    NS       ns1.lobo.azul.baires.dc.fi.uba.ar.  ; sapo (azul)
+$GENERATE 76-79  $     IN    CNAME    $.76/30
+
+80/30                  IN    NS       ns1.lobo.azul.baires.dc.fi.uba.ar.  ; tigre (azul)
+$GENERATE 80-83  $     IN    CNAME    $.80/30
+
+84/30                  IN    NS       ns1.lobo.azul.baires.dc.fi.uba.ar.  ; urraca (azul)
+$GENERATE 84-87  $     IN    CNAME    $.84/30

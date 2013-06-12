@@ -1,0 +1,18 @@
+$TTL	604800
+@	IN	SOA	nsroot.ardilla.mercedes.baires.dc.fi.uba.ar. root. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@             IN    NS     nsroot.ardilla.mercedes.baires.dc.fi.uba.ar.
+
+0/25                 IN    NS       ns2.foca.zarate.baires.dc.fi.uba.ar.  ; gato (zarate)
+$GENERATE 0-127  $   IN    CNAME    $.0/25
+
+128/25                   IN    NS       ns2.foca.zarate.baires.dc.fi.uba.ar.  ;  foca (zarate)
+$GENERATE 128-255    $   IN    CNAME    $.128/25
+
+
+
