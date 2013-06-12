@@ -7,3 +7,59 @@ zone "zarate.baires.dc.fi.uba.ar" in {
   type master;
   file "/etc/bind/db.zarate";
 };
+
+
+zone "0/24.25.168.192.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.ardilla.rev";
+};
+
+
+zone "128/26.7.61.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.caballo.rev";
+};
+
+zone "192/27.7.61.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.dingo.rev";
+};
+
+
+zone "208/30.6.61.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.elefante.rev";
+};
+
+zone "128/25.25.111.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.foca.rev";
+};
+
+
+zone "0/25.25.111.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.gato.rev";
+};
+
+zone "0/30.5.63.157.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.hiena.rev";
+};
+
+
+zone "4/30.5.63.157.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.iguana.rev";
+};
+
+zone "176/28.6.61.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.jaguar.rev";
+};
+
+zone "212/30.6.61.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.koala.rev";
+};
+
