@@ -4,8 +4,8 @@ version = 0.8.3.1
     workingdir = .
     udp = 10200
     [[3640]]
-        image = /home/pablo/Escritorio/IOS/c3640-js-mz.124-10.bin
-        idlepc = 0x604eb200
+        image = /home/luiggi/Escritorio/distribuidos/archivos_dynamips/IOS/c3640-js-mz.124-10.bin
+        idlepc = 0x603949c8
         sparsemem = True
         ghostios = True
         chassis = 3640
@@ -54,15 +54,15 @@ version = 0.8.3.1
         slot0 = NM-4E
         e0/0 = SWN 2
         e0/1 = SWO 1
-        x = -281.582827843
+        x = -317.082827843
         y = 259.460894757
         z = 1.0
 [127.0.0.1:7203]
     workingdir = .
     udp = 10300
     [[3640]]
-        image = /home/pablo/Escritorio/IOS/c3640-js-mz.124-10.bin
-        idlepc = 0x604eb200
+        image = /home/luiggi/Escritorio/distribuidos/archivos_dynamips/IOS/c3640-js-mz.124-10.bin
+        idlepc = 0x603949c8
         sparsemem = True
         ghostios = True
         chassis = 3640
@@ -81,8 +81,8 @@ version = 0.8.3.1
     workingdir = .
     udp = 10000
     [[3640]]
-        image = /home/pablo/Escritorio/IOS/c3640-js-mz.124-10.bin
-        idlepc = 0x604eb200
+        image = /home/luiggi/Escritorio/distribuidos/archivos_dynamips/IOS/c3640-js-mz.124-10.bin
+        idlepc = 0x603949c8
         sparsemem = True
         ghostios = True
         chassis = 3640
@@ -231,8 +231,8 @@ version = 0.8.3.1
     workingdir = .
     udp = 10100
     [[3640]]
-        image = /home/pablo/Escritorio/IOS/c3640-js-mz.124-10.bin
-        idlepc = 0x604eb200
+        image = /home/luiggi/Escritorio/distribuidos/archivos_dynamips/IOS/c3640-js-mz.124-10.bin
+        idlepc = 0x603949c8
         sparsemem = True
         ghostios = True
         chassis = 3640
@@ -363,26 +363,28 @@ version = 0.8.3.1
         x = -183.597979746
         y = 34.9806640168
         z = 1.0
+        hx = -16.7578125
+        hy = -25.0
 [GNS3-DATA]
     configs = configs
-    m11 = 0.707106781187
-    m22 = 0.707106781187
+    m11 = 0.5
+    m22 = 0.5
     [[NOTE 1]]
         text = "Sede Azul"
         x = 631.029437252
         y = 227.718254069
     [[NOTE 2]]
-        text = "Sede Zárate"
-        x = 632.100505063
-        y = 9.55887450305
-    [[NOTE 3]]
         text = "Sede Mercedes"
         x = 632.100505063
         y = -272.174098192
-    [[Cloud Telnet:Server]]
+    [[NOTE 3]]
+        text = "Sede Zárate"
+        x = 632.100505063
+        y = 9.55887450305
+    [[Cloud FTPServer]]
         symbol = computer
-        x = 433.479797465
-        y = 312.571067811
+        x = 459.84314575
+        y = -62.7548339959
         z = 1.0
     [[Cloud HostA]]
         symbol = computer
@@ -394,10 +396,10 @@ version = 0.8.3.1
         x = -412.822943215
         y = -316.359956417
         z = 1.0
-    [[Cloud FTPServer]]
+    [[Cloud Telnet:Server]]
         symbol = computer
-        x = 459.84314575
-        y = -62.7548339959
+        x = 433.479797465
+        y = 312.571067811
         z = 1.0
     [[Cloud HostB]]
         symbol = computer
@@ -433,10 +435,10 @@ version = 0.8.3.1
         z = 1.0
     [[SHAPE 1]]
         type = rectangle
-        x = -474.468650176
-        y = 130.481710037
-        width = 1081.87337522
-        height = 253.477272148
+        x = -479.418397644
+        y = -380.423448278
+        width = 1081.87337521
+        height = 258.801081914
         z = -2.0
     [[SHAPE 2]]
         type = rectangle
@@ -447,8 +449,8 @@ version = 0.8.3.1
         z = -2.0
     [[SHAPE 3]]
         type = rectangle
-        x = -479.418397644
-        y = -380.423448278
-        width = 1081.87337521
-        height = 258.801081914
+        x = -474.468650176
+        y = 130.481710037
+        width = 1081.87337522
+        height = 253.477272148
         z = -2.0
