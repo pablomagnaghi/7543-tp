@@ -14,6 +14,10 @@ zone "0/24.25.168.192.in-addr.arpa" in {
   file "/etc/bind/db.ardilla.rev";
 };
 
+zone "160/28.6.61.10.in-addr.arpa" in {
+  type master;
+  file "/etc/bind/db.burro.rev";
+};
 
 zone "128/26.7.61.10.in-addr.arpa" in {
   type master;
