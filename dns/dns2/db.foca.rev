@@ -1,0 +1,16 @@
+$TTL	604800
+@	IN	SOA	ns2.foca.zarate.baires.dc.fi.uba.ar. root. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+
+@    IN   NS    ns2.foca.zarate.azul.baires.dc.fi.uba.ar.
+
+129	  IN   PTR   r8.foca.zarate.baires.dc.fi.uba.ar
+130	  IN   PTR   r9.foca.zarate.baires.dc.fi.uba.ar
+131	  IN   PTR   r10.foca.zarate.baires.dc.fi.uba.ar
+132	  IN   PTR   r12.foca.zarate.baires.dc.fi.uba.ar
+133	  IN   PTR   ns2.foca.zarate.baires.dc.fi.uba.ar
