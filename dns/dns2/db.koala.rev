@@ -9,5 +9,5 @@ $TTL	604800
 
 @    IN   NS    ns2.foca.zarate.azul.baires.dc.fi.uba.ar.
 
-213	  IN   PTR   r11.koala.zarate.baires.dc.fi.uba.ar
-214	  IN   PTR   r14.koala.zarate.baires.dc.fi.uba.ar
+213	  IN   PTR   r11.koala.zarate.baires.dc.fi.uba.ar.
+214	  IN   PTR   r14.koala.zarate.baires.dc.fi.uba.ar.
