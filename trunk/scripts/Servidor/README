@@ -1,0 +1,8 @@
+
+En este directorio se encuentran los scripts que se deben ejecutar para crear los tuneles vpn utilizados para comunicar la topología con el resto de las terminales.
+
+Para crear los tuneles solo alcanza con correr el script iniciarTap.sh, el mismo no recibe ningún parametro y se encarga de crear los 10 tuneles vpn necesarios. Una vez creados los 10 dispositivos tap, se debe ejecutar el script promiscUp.sh el cual coloca todos los dispositivos en modo promiscuo.
+
+Una vez ejecutados los dos scripts (ambos en modo superusuario), se habrán creados 10 dispositivos tap, los cuales se deben utilizar para comunicar las clouds correspondientes en la topología GNS3.
+
+Se provee un tercer script el cual se encarga unicamente de detener todos los dispositivos y se utiliza unicamente para realizar las pruebas correspondientes. El resto de los archivos *.conf son utilizados para la creación de los tuneles, dichos archivos deben estar en el mismo directorio que los scripts y no deben ser invocados manualmente.
