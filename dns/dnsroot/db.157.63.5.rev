@@ -9,8 +9,8 @@ $TTL	604800
 
 @                    IN    NS       nsroot.ardilla.mercedes.baires.dc.fi.uba.ar.
 
-0/30                 IN    NS       ns1.lobo.azul.baires.dc.fi.uba.ar.  ; hiena (zarate)
+0/30                 IN    NS       ns2.foca.zarate.baires.dc.fi.uba.ar.  ; hiena (zarate)
 $GENERATE 0-3  $     IN    CNAME    $.0/30
 
-4/30                 IN    NS       ns1.lobo.azul.baires.dc.fi.uba.ar.  ; iguana (zarate)
+4/30                 IN    NS       ns2.foca.zarate.baires.dc.fi.uba.ar.  ; iguana (zarate)
 $GENERATE 4-7  $     IN    CNAME    $.4/30
