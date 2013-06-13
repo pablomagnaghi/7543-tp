@@ -7,9 +7,7 @@ $TTL	604800
 			 604800 )	; Negative Cache TTL
 ;
 @	        IN	NS	ns1.lobo
-ns1.lobo	IN	A	10.254.48.124 
-
-;TODO aca tenemos que poner la ip de DN1: 10.61.6.133;
+ns1.lobo	IN	A	10.61.6.133
 
 ; Lobo
 r14.lobo           IN    A     10.61.6.129

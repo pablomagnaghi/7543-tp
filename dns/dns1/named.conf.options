@@ -7,8 +7,7 @@ options {
 
         listen-on {
           127.0.0.1;
-          //TODO Aca deberia ir la ip de DN1 que es la siguiente: 10.61.6.133;
-          10.254.48.124; // esta es mi ip de la computadora actual hay que cambiarla
+          10.61.6.133;
         };
 
 	// If there is a firewall between you and nameservers you want
@@ -21,8 +20,7 @@ options {
 	// the all-0's placeholder.
 
 	forwarders {
-		//TODO aca debe ir la ip del root que es: 192.168.25.7;
-		10.254.48.73; //ip de dx9
+		192.168.25.7;		
 	};
 
 	//========================================================================

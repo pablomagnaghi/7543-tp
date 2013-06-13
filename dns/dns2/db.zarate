@@ -7,7 +7,7 @@ $TTL	604800
 			 604800 )	; Negative Cache TTL
 ;
 @	        IN	NS	ns2.foca
-ns2.foca  IN  A  10.111.25.197
+ns2.foca  IN  A  10.111.25.133
 
 ; Foca
 r8.foca             IN    A    10.111.25.129
