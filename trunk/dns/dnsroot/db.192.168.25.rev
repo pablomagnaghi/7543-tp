@@ -9,4 +9,5 @@ $TTL	604800
 ;
 
 @                   IN    NS    nsroot.ardilla.mercedes.baires.dc.fi.uba.ar.
-$GENERATE 0-255  $  IN    NS    ns2.foca.zarate.baires.dc.fi.uba.ar. ; ardilla
+
+$GENERATE 0-255  $  IN    NS    ns2.foca.zarate.baires.dc.fi.uba.ar. ; ardilla (merdeces)

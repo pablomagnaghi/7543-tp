@@ -9,19 +9,19 @@ $TTL	604800
 
 @                      IN    NS       nsroot.ardilla.mercedes.baires.dc.fi.uba.ar.
 
-128/27                 IN    NS       ns1.lobo.azul.baires.dc.fi.uba.ar.  ; lobo
+128/27                 IN    NS       ns1.lobo.azul.baires.dc.fi.uba.ar.  ; lobo (azul)
 $GENERATE 128-159  $   IN    CNAME    $.128/27
 
-160/28                 IN    NS       ns1.lobo.azul.baires.dc.fi.uba.ar.  ; burro
+160/28                 IN    NS       ns2.foca.zarate.baires.dc.fi.uba.ar.  ; burro (mercedes)
 $GENERATE 160-175  $   IN    CNAME    $.160/28
 
-176/28                 IN    NS       ns2.foca.zarate.baires.dc.fi.uba.ar.  ; jaguar
+176/28                 IN    NS       ns2.foca.zarate.baires.dc.fi.uba.ar.  ; jaguar (zarate)
 $GENERATE 176-191  $   IN    CNAME    $.176/28
 
-192/28                 IN    NS       ns2.foca.zarate.baires.dc.fi.uba.ar.  ; jaguar
+192/28                 IN    NS       ns1.lobo.azul.baires.dc.fi.uba.ar.  ; oso (azul)
 $GENERATE 192-207  $   IN    CNAME    $.192/28
 
-208/30                 IN    NS       ns2.foca.zarate.baires.dc.fi.uba.ar.  ; elefante
+208/30                 IN    NS       ns2.foca.zarate.baires.dc.fi.uba.ar.  ; elefante (mercedes)
 $GENERATE 208-211  $   IN    CNAME    $.208/30
 
 212/30                 IN    NS       ns2.foca.zarate.baires.dc.fi.uba.ar.  ; koala (zarate)
