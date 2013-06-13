@@ -9,11 +9,11 @@ $TTL	604800
 
 @    IN   NS    ns2.foca.zarate.azul.baires.dc.fi.uba.ar.
 
-2	  IN   PTR   r1.ardilla.mercedes.baires.dc.fi.uba.ar
-3	  IN   PTR   r2.ardilla.mercedes.baires.dc.fi.uba.ar
-4	  IN   PTR   r3.ardilla.mercedes.baires.dc.fi.uba.ar
-5	  IN   PTR   r4.ardilla.mercedes.baires.dc.fi.uba.ar
-1	  IN   PTR   www.ardilla.mercedes.baires.dc.fi.uba.ar
-6	  IN   PTR   hostc.ardilla.mercedes.baires.dc.fi.uba.ar
-7	  IN   PTR   nsroot.ardilla.mercedes.baires.dc.fi.uba.ar
+2	  IN   PTR   r1.ardilla.mercedes.baires.dc.fi.uba.ar.
+3	  IN   PTR   r2.ardilla.mercedes.baires.dc.fi.uba.ar.
+4	  IN   PTR   r3.ardilla.mercedes.baires.dc.fi.uba.ar.
+5	  IN   PTR   r4.ardilla.mercedes.baires.dc.fi.uba.ar.
+1	  IN   PTR   www.ardilla.mercedes.baires.dc.fi.uba.ar.
+6	  IN   PTR   hostc.ardilla.mercedes.baires.dc.fi.uba.ar.
+7	  IN   PTR   nsroot.ardilla.mercedes.baires.dc.fi.uba.ar.
 

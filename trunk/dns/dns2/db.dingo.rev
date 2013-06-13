@@ -9,6 +9,6 @@ $TTL	604800
 
 @    IN   NS    ns2.foca.zarate.azul.baires.dc.fi.uba.ar.
 
-193	  IN   PTR   r4.dingo.mercedes.baires.dc.fi.uba.ar
-194	  IN   PTR   r5.dingo.mercedes.baires.dc.fi.uba.ar
-195	  IN   PTR   r6.dingo.mercedes.baires.dc.fi.uba.ar
+193	  IN   PTR   r4.dingo.mercedes.baires.dc.fi.uba.ar.
+194	  IN   PTR   r5.dingo.mercedes.baires.dc.fi.uba.ar.
+195	  IN   PTR   r6.dingo.mercedes.baires.dc.fi.uba.ar.
