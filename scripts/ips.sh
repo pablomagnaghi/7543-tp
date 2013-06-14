@@ -4,14 +4,14 @@
 ###########  Direcciones ip de los hosts de la red ##############
 #################################################################
 
-IP_HOSTA="10.61.6.181"
-IP_HOSTB="10.61.5.4"
-IP_HOSTC="192.168.25.6"
+IP_HOST_A="10.61.6.181"
+IP_HOST_B="10.61.5.4"
+IP_HOST_C="192.168.25.6"
 
-IP_WEBSERVER="192.168.25.1"
-IP_FTPSERVER="10.111.25.1"
-IP_TELSERVER_L="10.61.6.132"
-IP_TELSERVER_M="10.61.5.3"
+IP_WEB_SERVER="192.168.25.1"
+IP_FTP_SERVER="10.111.25.1"
+IP_TEL_SERVER_L="10.61.6.132"
+IP_TEL_SERVER_M="10.61.5.3"
 
 IP_DNS_ROOT="192.168.25.7"
 IP_DNS_1="10.61.6.133"
