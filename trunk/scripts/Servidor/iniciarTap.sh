@@ -7,8 +7,8 @@ openvpn ./hostA.conf &
 openvpn ./hostB.conf &
 openvpn ./hostC.conf &
 
-openvpn ./telServerD.conf &
-openvpn ./telServerR.conf &
+openvpn ./telServerL.conf &
+openvpn ./telServerM.conf &
 
 openvpn ./webServer.conf &
 
