@@ -7,13 +7,13 @@ TAP_NAME_M=tap4
 . ./ips.sh
 
 # $1 -> ip del servidor
-openvpn --config ./cliente.conf --remote $1 --port 1304 --ifconfig $IP_TEL_SERVER_L $MASC_L &
+openvpn --config ./conf/TEL_SERVER_L.conf --remote $1 --port 1304 --ifconfig $IP_TEL_SERVER_L $MASC_L &
 
 # Damos tiempo a que termine de crear la vpn
 sleep 5s
 
 # $1 -> ip del servidor
-openvpn --config ./cliente.conf --remote $1 --port 1305 --ifconfig $IP_TEL_SERVER_M $MASC_M &
+openvpn --config ./conf/TEL_SERVER_M.conf --remote $1 --port 1305 --ifconfig $IP_TEL_SERVER_M $MASC_M &
 
 # Damos tiempo a que termine de crear la vpn
 sleep 20s
