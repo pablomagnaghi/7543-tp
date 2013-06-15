@@ -46,9 +46,12 @@ echo "Configurando Telnet Server ..."
 # Arranca
 	
 #CONFIGURACION SERVICIO TELNET
-cp ./inetd.conf /etc/inetd.conf
-#/etc/init.d/inetd restart
-/etc/init.d/openbsd-inetd restart
+#cp ./inetd.conf /etc/inetd.conf
+#/etc/init.d/openbsd-inetd restart
+
+cp inetd.conf /etc/inetd.conf
+service xinetd restart
+
 
 echo "OK! Telnet Server configurado."
 
