@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TAP_NAME=tap0
+TAP_NAME=tap5
 
 # Levanto variables (direcciones de las redes, de broadcast, de los routers, máscaras, etc)
 . ./ips.sh
@@ -34,9 +34,7 @@ route add -net $IP_T netmask $MASC_T gw $IP_R12_G $TAP_NAME
 route add -net $IP_U netmask $MASC_U gw $IP_R12_G $TAP_NAME
 
 # Establece el servidor DNS a consultar
-echo "domain zarate.baires.dc.fi.uba.ar" > /etc/resolv.conf
-echo "search zarate.baires.dc.fi.uba.ar" >> /etc/resolv.conf
-echo "nameserver $IP_DNS_2" >> /etc/resolv.conf
+echo "nameserver $IP_DNS_2" > /etc/resolv.conf
 
 # Levantar servicio
 echo "Configurando FTP Server ..."

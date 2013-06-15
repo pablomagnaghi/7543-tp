@@ -1,7 +1,7 @@
 #!/bin/bash
 
-TAP_NAME_L=tap0
-TAP_NAME_M=tap1
+TAP_NAME_L=tap3
+TAP_NAME_M=tap4
 
 # Levanto variables (direcciones de las redes, de broadcast, de los routers, máscaras, etc)
 . ./ips.sh
@@ -40,9 +40,7 @@ route add -net $IP_T netmask $MASC_T gw $IP_R15_L $TAP_NAME_L
 route add -net $IP_U netmask $MASC_U gw $IP_R15_L $TAP_NAME_L
 
 # Establece el servidor DNS a consultar
-echo "domain azul.baires.dc.fi.uba.ar" > /etc/resolv.conf
-echo "search azul.baires.dc.fi.uba.ar" >> /etc/resolv.conf
-echo "nameserver $IP_DNS_1" >> /etc/resolv.conf
+echo "nameserver $IP_DNS_1" > /etc/resolv.conf
 
 echo "Configurando Telnet Server ..."
 # Arranca

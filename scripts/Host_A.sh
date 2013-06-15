@@ -34,7 +34,5 @@ route add -net $IP_T netmask $MASC_T gw $IP_RVIRT_J $TAP_NAME
 route add -net $IP_U netmask $MASC_U gw $IP_RVIRT_J $TAP_NAME
 
 # Establece el servidor DNS a consultar
-echo "domain zarate.baires.dc.fi.uba.ar" > /etc/resolv.conf
-echo "search zarate.baires.dc.fi.uba.ar" >> /etc/resolv.conf
-echo "nameserver $IP_DNS_2" >> /etc/resolv.conf 
+echo "nameserver $IP_DNS_2" > /etc/resolv.conf 
 
