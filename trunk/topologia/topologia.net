@@ -377,26 +377,26 @@ version = 0.8.3.1
         hy = -25.0
 [GNS3-DATA]
     configs = configs
-    m11 = 0.707106781187
-    m22 = 0.707106781187
+    m11 = 1.0
+    m22 = 1.0
     [[NOTE 1]]
         text = "Sede Azul"
         x = 631.029437252
         y = 227.718254069
     [[NOTE 2]]
-        text = "Sede Zárate"
-        x = 632.100505063
-        y = 9.55887450305
-    [[NOTE 3]]
         text = "Sede Mercedes"
         x = 632.100505063
         y = -272.174098192
-    [[Cloud Telnet:Server]]
+    [[NOTE 3]]
+        text = "Sede Zárate"
+        x = 632.100505063
+        y = 9.55887450305
+    [[Cloud FTPServer]]
         symbol = computer
-        x = 228.91125497
-        y = 244.156854249
+        x = 459.84314575
+        y = -62.7548339959
         z = 1.0
-        connections = SWM:4:nio_linux_eth:tap4 SWL:5:nio_linux_eth:tap3
+        connections = SWG:2:nio_linux_eth:tap5
     [[Cloud HostA]]
         symbol = computer
         x = 347.884776311
@@ -409,18 +409,26 @@ version = 0.8.3.1
         y = -316.359956417
         z = 1.0
         connections = SWA:6:nio_linux_eth:tap2
-    [[Cloud FTPServer]]
+    [[Cloud Telnet:Server]]
         symbol = computer
-        x = 459.84314575
-        y = -62.7548339959
+        x = 188.820851175
+        y = 420.051298551
         z = 1.0
-        connections = SWG:2:nio_linux_eth:tap5
+        connections = SWM:4:nio_linux_eth:tap4
     [[Cloud HostB]]
         symbol = computer
         x = 336.370057685
         y = 325.129509039
         z = 1.0
         connections = SWM:3:nio_linux_eth:tap1
+    [[Cloud Telnet.Server]]
+        symbol = computer
+        x = 229.833044483
+        y = 254.588311755
+        hx = -17.7964218129
+        hy = -23.5857864376
+        z = 1.0
+        connections = SWL:5:nio_linux_eth:tap3
     [[Cloud DNS2]]
         symbol = computer
         x = -88.7099384705
@@ -449,10 +457,10 @@ version = 0.8.3.1
         connections = SWA:7:nio_linux_eth:tap6
     [[SHAPE 1]]
         type = rectangle
-        x = -474.468650176
-        y = 130.481710037
-        width = 1081.87337522
-        height = 253.477272148
+        x = -479.418397644
+        y = -380.423448278
+        width = 1081.87337521
+        height = 258.801081914
         z = -2.0
     [[SHAPE 2]]
         type = rectangle
@@ -463,8 +471,8 @@ version = 0.8.3.1
         z = -2.0
     [[SHAPE 3]]
         type = rectangle
-        x = -479.418397644
-        y = -380.423448278
-        width = 1081.87337521
-        height = 258.801081914
+        x = -474.468650176
+        y = 130.481710037
+        width = 1081.87337522
+        height = 253.477272148
         z = -2.0
