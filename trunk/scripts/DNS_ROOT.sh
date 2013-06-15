@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TAP_NAME=tap0
+TAP_NAME=tap7
 
 # Levanto variables (direcciones de las redes, de broadcast, de los routers, máscaras, etc)
 . ./ips.sh
@@ -34,7 +34,5 @@ route add -net $IP_T netmask $MASC_T gw $IP_R2_A $TAP_NAME
 route add -net $IP_U netmask $MASC_U gw $IP_R2_A $TAP_NAME
 
 # Establece el servidor DNS a consultar
-echo "domain mercedes.baires.dc.fi.uba.ar" > /etc/resolv.conf
-echo "search mercedes.baires.dc.fi.uba.ar" >> /etc/resolv.conf
-echo "nameserver $IP_DNS_ROOT" >> /etc/resolv.conf
+echo "nameserver $IP_DNS_ROOT" > /etc/resolv.conf
 
