@@ -6,7 +6,7 @@ TAP_NAME=tap0
 . ./ips.sh
 
 # $1 -> ip del servidor
-openvpn --config ./cliente.conf --remote $1 --port 1202 --ifconfig $IP_HOST_A $MASC_J &
+openvpn --config ./conf/Host_A.conf --remote $1 --port 1202 --ifconfig $IP_HOST_A $MASC_J &
 
 # Damos tiempo a que termine de crear la vpn
 sleep 10s

@@ -6,7 +6,7 @@ TAP_NAME=tap8
 . ./ips.sh
 
 # $1 -> ip del servidor
-openvpn --config ./cliente.conf --remote $1 --port 1309 --ifconfig $IP_DNS_1 $MASC_L &
+openvpn --config ./conf/DNS_1.conf --remote $1 --port 1309 --ifconfig $IP_DNS_1 $MASC_L &
 
 # Damos tiempo a que termine de crear la vpn
 sleep 10s
