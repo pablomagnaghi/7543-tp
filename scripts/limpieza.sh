@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #Detiene el servicio
 function stopOpenVPN {
     /etc/init.d/openvpn stop
