@@ -6,7 +6,7 @@ TAP_NAME=tap5
 . ./ips.sh
 
 # $1 -> ip del servidor
-openvpn --config ./cliente.conf --remote $1 --port 1306 --ifconfig $IP_FTP_SERVER $MASC_G &
+openvpn --config ./conf/FTP_SERVER.conf --remote $1 --port 1306 --ifconfig $IP_FTP_SERVER $MASC_G &
 
 # Damos tiempo a que termine de crear la vpn
 sleep 10s
