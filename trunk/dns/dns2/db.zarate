@@ -29,11 +29,11 @@ r13.iguana          IN    A    157.63.5.6
 interneta.iguana    IN    A    157.63.5.5
 
 ; Jaguar
-r10.iguana          IN    A    10.61.6.177
-r11.iguana          IN    A    10.61.6.178
-r12.iguana          IN    A    10.61.6.179
-r13.iguana          IN    A    10.61.6.180
-hosta.iguana        IN    A    10.61.6.181
+r10.jaguar          IN    A    10.61.6.177
+r11.jaguar          IN    A    10.61.6.178
+r12.jaguar          IN    A    10.61.6.179
+r13.jaguar          IN    A    10.61.6.180
+hosta.jaguar        IN    A    10.61.6.181
 
 ; Koala
 r11.koala           IN    A    10.61.6.213
