@@ -14,4 +14,7 @@ echo "Reiniciando BIND..."
 sudo killall named
 sudo service bind9 restart
 
+sudo rndc flush
+echo "Flush cache"
+
 echo "Ejecucion finalizada"
