@@ -10,17 +10,17 @@ $TTL	604800
 ns1.lobo	IN	A	10.61.6.133
 
 ; Lobo
-r14.lobo           IN    A     10.61.6.129
-r15.lobo           IN    A     10.61.6.130
-r16.lobo           IN    A     10.61.6.131
-telserver1.lobo           IN    A     10.61.6.132
+r14.lobo           IN    A     10.61.6.130
+r15.lobo           IN    A     10.61.6.131
+r16.lobo           IN    A     10.61.6.132
+telserver1.lobo           IN    A     10.61.6.129
 ns1.lobo           IN    A     10.61.6.133
 
 ; Mono
 r16.mono           IN    A     10.61.5.1
 r17.mono           IN    A     10.61.5.2
-telserver2.mono           IN    A     10.61.5.3
-hostb.mono           IN    A     10.61.5.4
+telserver2.mono           IN    A     10.61.5.130
+hostb.mono           IN    A     10.61.5.3
 
 ; Nutria
 r17.nutria           IN    A     10.61.7.225
