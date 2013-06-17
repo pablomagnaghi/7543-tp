@@ -92,8 +92,8 @@ echo "Configurando Telnet Server ..."
 # Arranca
 	
 #CONFIGURACION SERVICIO TELNET
-cp inetd.conf /etc/inetd.conf
-service xinetd restart
+#cp inetd.conf /etc/inetd.conf
+#service xinetd restart
 
 
 echo "OK! Telnet Server configurado."
