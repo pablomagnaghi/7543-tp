@@ -77,10 +77,10 @@ ip rule add table default prio 32767
 
 
 # Agrego las reglas del telnet
-ip rule add from "10.61.5.3" lookup tablem prio 1001
-ip rule add to "10.61.5.3" lookup tablem prio 1002
-ip rule add from "10.61.6.132" lookup tablel prio 1003
-ip rule add to "10.61.6.132" lookup tablel prio 1004
+ip rule add from "10.61.5.130" lookup tablem prio 1001
+ip rule add to "10.61.5.130" lookup tablem prio 1002
+ip rule add from "10.61.6.129" lookup tablel prio 1003
+ip rule add to "10.61.6.129" lookup tablel prio 1004
 
 ip rule add table tablel prio 1101
 ip rule add table tablem prio 1102
